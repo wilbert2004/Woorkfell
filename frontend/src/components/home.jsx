@@ -1,6 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsCalendar2WeekFill } from "react-icons/bs";
+import { BsCalendar2Date } from "react-icons/bs";
+import { FaUsersGear } from "react-icons/fa6";
+import { BsFilePpt } from "react-icons/bs";
+import { BsPeopleFill } from "react-icons/bs";
+import { BsQuestion } from "react-icons/bs";
+import { BsReceipt } from "react-icons/bs";
+import { BsQuestionDiamond } from "react-icons/bs";
+import { BsBarChart } from "react-icons/bs";
 
 const Home = () => {
   return (
@@ -57,6 +65,9 @@ const Home = () => {
             {/* modulo de encuesta*/}
             <li>
               <Link className="text-while text-decoration-none me-me-auto pb-3 align-items-center d-flex dropdown-toggle">
+                <span style={{ color: "white", marginRight: "10px" }}>
+                  <BsCalendar2Date />
+                </span>
                 <span
                   className="fs-5 d-none d-sm-inline"
                   style={{
@@ -74,7 +85,9 @@ const Home = () => {
                       color: "white",
                     }}
                   >
-                    {" "}
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <FaUsersGear />
+                    </span>{" "}
                     Dimensiones
                   </Link>
                 </li>
@@ -88,6 +101,9 @@ const Home = () => {
                       color: "white",
                     }}
                   >
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <BsQuestion />
+                    </span>{" "}
                     Preguntas{" "}
                   </Link>
                 </li>
@@ -100,13 +116,76 @@ const Home = () => {
                       color: "white",
                     }}
                   >
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <FaUsersGear />
+                    </span>{" "}
                     Escalas
                   </Link>
                 </li>
               </ul>
             </li>
             {/* modulo de Resultados */}
-            <li></li>
+            <li>
+              <Link className="text-while text-decoration-none me-me-auto pb-3 align-items-center d-flex dropdown-toggle">
+                <span style={{ color: "white", marginRight: "10px" }}>
+                  <BsReceipt />
+                </span>
+                <span
+                  className="fs-5 d-none d-sm-inline"
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  Resultados
+                </span>
+              </Link>
+              {/* submodulo de resultados  */}
+              <ul className="w-100 ">
+                <li className="collapse show nav flex-column ms-1 ">
+                  <Link
+                    to="/Resultados"
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <BsQuestionDiamond />
+                    </span>{" "}
+                    Resultado
+                  </Link>
+                </li>
+              </ul>
+              <ul className="w-100 ">
+                <li className="collapse show nav flex-column ms-1 ">
+                  <Link
+                    to="/Nivelsatisfaccion"
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <BsBarChart />
+                    </span>{" "}
+                    Niveles de satifaccion
+                  </Link>
+                </li>
+              </ul>
+              <ul className="w-100 ">
+                <li className="collapse show nav flex-column ms-1 ">
+                  <Link
+                    to="/dimensiones"
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <BsBarChart />
+                    </span>{" "}
+                    Comparar Periodo
+                  </Link>
+                </li>
+              </ul>
+            </li>
           </div>
         </div>
       </div>
