@@ -3,16 +3,25 @@ import { Link } from "react-router-dom";
 import { BsCalendar2WeekFill } from "react-icons/bs";
 import { BsCalendar2Date } from "react-icons/bs";
 import { FaUsersGear } from "react-icons/fa6";
-import { BsFilePpt } from "react-icons/bs";
-import { BsPeopleFill } from "react-icons/bs";
 import { BsQuestion } from "react-icons/bs";
 import { BsReceipt } from "react-icons/bs";
 import { BsQuestionDiamond } from "react-icons/bs";
 import { BsBarChart } from "react-icons/bs";
+import { BsGear } from "react-icons/bs";
+import { FaUsers } from "react-icons/fa6";
+import { CiViewList } from "react-icons/ci";
+import { BiCog } from "react-icons/bi";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Home = () => {
   return (
     <div>
+      <nav className="navbar navbar-light bg-light ">
+        <div className="profile-section">
+          <FaRegUserCircle className="circle" />
+          <h3 className="font-inter-bold">WILBERT OLIVER CHAN</h3>
+        </div>
+      </nav>
       <div className="container-fluid ">
         <div className=" row flex-nowrap ">
           <div
@@ -26,13 +35,7 @@ const Home = () => {
                 to="/home"
                 className="text-while text-decoration-none me-me-auto pb-3 align-items-center d-flex "
               >
-                <span
-                  className="fs-5 d-none d-sm-inline letracolor"
-                  style={{
-                    color: "white",
-                    listStyle: "none",
-                  }}
-                >
+                <span className="fs-5 d-none d-sm-inline letracolor">
                   Workfeel
                 </span>
               </Link>
@@ -51,13 +54,7 @@ const Home = () => {
                 <span style={{ color: "white", marginRight: "10px" }}>
                   <BsCalendar2WeekFill />
                 </span>
-                <span
-                  className="fs-5 d-none d-sm-inline"
-                  style={{
-                    color: "white",
-                    listStyle: "none",
-                  }}
-                >
+                <span className="fs-5 d-none d-sm-inline letracolor">
                   Periodo
                 </span>
               </Link>
@@ -68,23 +65,13 @@ const Home = () => {
                 <span style={{ color: "white", marginRight: "10px" }}>
                   <BsCalendar2Date />
                 </span>
-                <span
-                  className="fs-5 d-none d-sm-inline"
-                  style={{
-                    color: "white",
-                  }}
-                >
+                <span className="fs-5 d-none d-sm-inline letracolor">
                   Encuestas
                 </span>
               </Link>
               <ul className="w-100 ">
                 <li className="collapse show nav flex-column ms-1 ">
-                  <Link
-                    to="/dimensiones"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/dimensiones" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
                       <FaUsersGear />
                     </span>{" "}
@@ -94,13 +81,7 @@ const Home = () => {
               </ul>
               <ul className="w-100">
                 <li className="collapse show nav flex-column ms-1">
-                  <Link
-                    to="/preguntas"
-                    className="letracolor"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/preguntas" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
                       <BsQuestion />
                     </span>{" "}
@@ -110,12 +91,7 @@ const Home = () => {
               </ul>
               <ul className="w-100">
                 <li className="collapse show nav flex-column ms-1">
-                  <Link
-                    to="/escalas"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/escalas" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
                       <FaUsersGear />
                     </span>{" "}
@@ -130,24 +106,14 @@ const Home = () => {
                 <span style={{ color: "white", marginRight: "10px" }}>
                   <BsReceipt />
                 </span>
-                <span
-                  className="fs-5 d-none d-sm-inline"
-                  style={{
-                    color: "white",
-                  }}
-                >
+                <span className="fs-5 d-none d-sm-inline letracolor">
                   Resultados
                 </span>
               </Link>
               {/* submodulo de resultados  */}
               <ul className="w-100 ">
                 <li className="collapse show nav flex-column ms-1 ">
-                  <Link
-                    to="/Resultados"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/Resultados" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
                       <BsQuestionDiamond />
                     </span>{" "}
@@ -157,12 +123,7 @@ const Home = () => {
               </ul>
               <ul className="w-100 ">
                 <li className="collapse show nav flex-column ms-1 ">
-                  <Link
-                    to="/Nivelsatisfaccion"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/Nivelsatisfaccion" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
                       <BsBarChart />
                     </span>{" "}
@@ -172,16 +133,52 @@ const Home = () => {
               </ul>
               <ul className="w-100 ">
                 <li className="collapse show nav flex-column ms-1 ">
-                  <Link
-                    to="/dimensiones"
-                    style={{
-                      color: "white",
-                    }}
-                  >
+                  <Link to="/Comparacion" className="letracolor">
                     <span style={{ color: "white", marginRight: "10px" }}>
-                      <BsBarChart />
+                      <FaUsers />
                     </span>{" "}
                     Comparar Periodo
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link className="text-while text-decoration-none me-me-auto pb-3 align-items-center d-flex dropdown-toggle">
+                <span style={{ color: "white", marginRight: "10px" }}>
+                  <BsGear />
+                </span>
+                <span className="fs-5 d-none d-sm-inline letracolor">
+                  Generales
+                </span>
+              </Link>
+              <ul className="w-100 ">
+                <li className="collapse show nav flex-column ms-1 ">
+                  <Link to="/Listapuestos" className="letracolor">
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <CiViewList />
+                    </span>{" "}
+                    Lista de puesto
+                  </Link>
+                </li>
+              </ul>
+              <ul className="w-100 ">
+                <li className="collapse show nav flex-column ms-1 ">
+                  <Link to="/Planaccion" className="letracolor">
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <CiViewList />
+                    </span>{" "}
+                    Plan de accion
+                  </Link>
+                </li>
+              </ul>
+              <ul className="w-100">
+                <li className="collapse show nav flex-column ms-1">
+                  <Link to="/Planaccion" className="letracolor">
+                    <span style={{ color: "white", marginRight: "10px" }}>
+                      <BiCog />
+                    </span>
+                    {""}
+                    Configuraciones
                   </Link>
                 </li>
               </ul>

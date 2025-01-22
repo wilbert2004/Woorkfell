@@ -1,7 +1,7 @@
 /* src/App.css o cualquier archivo CSS global */
 @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /* src/App.css o cualquier archivo CSS que estés usando */
@@ -43,4 +43,24 @@
 .dimension{
   width: 442px;
   height: 55px;
+}
+
+
+.letracolor{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.circle {
+  width: 70px; /* Tamaño de la imagen */
+  height: 70px;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor circular */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+/* Sección de la imagen */
+.profile-section {
+  display: flex;
+  align-items: center; /* Centra verticalmente la imagen y el texto */
 }
