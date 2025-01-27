@@ -64,3 +64,29 @@
   display: flex;
   align-items: center; /* Centra verticalmente la imagen y el texto */
 }
+
+/* Bloquear desplazamiento horizontal y permitir solo desplazamiento vertical */
+body {
+  overflow-x: hidden; /* Bloquea el desplazamiento horizontal */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+  width: 100%; /* Asegura que el cuerpo ocupe toda la pantalla */
+}
+
+/* Limitar el ancho máximo para evitar desplazamiento horizontal */
+.container-fluid, .row, .col-auto {
+  max-width: 100%; /* Asegura que el contenedor no se extienda más allá del 100% del ancho */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Asegura que el texto se ajuste y no se desborde horizontalmente */
+.text-container {
+  word-wrap: break-word; /* Rompe palabras largas para que se ajusten al contenedor */
+  max-width: 100%; /* Limita el ancho del contenedor de texto */
+  overflow: hidden; /* Evita que el texto se desborde */
+}
+
+/* Ajuste del contenedor principal */
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
+}
