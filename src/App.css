@@ -1,0 +1,95 @@
+/* src/App.css o cualquier archivo CSS global */
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/* src/App.css o cualquier archivo CSS que estés usando */
+.alkatra-custom {
+  font-family: 'Alkatra', serif;  /* tamano de la letra 48  */
+  
+  
+}
+
+.amaranth-bold {
+  font-family: "Amaranth", serif;  
+}
+
+
+.pagincentre{
+  text-align: center;
+}
+
+
+.text-spacing {
+  letter-spacing: 20px; /* Ajusta el valor según tus necesidades */
+
+}
+
+.margin 
+{
+  margin-top: 50px;
+}
+
+
+.letra{
+  font-size: 48px;
+}
+
+.letra1{
+  font-size: 70px;
+}
+
+.dimension{
+  width: 442px;
+  height: 55px;
+}
+
+
+.letracolor{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.circle {
+  width: 70px; /* Tamaño de la imagen */
+  height: 70px;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor circular */
+  margin-right: 20px; /* Espaciado entre la imagen y el texto */
+}
+
+/* Sección de la imagen */
+.profile-section {
+  display: flex;
+  align-items: center; /* Centra verticalmente la imagen y el texto */
+}
+
+/* Bloquear desplazamiento horizontal y permitir solo desplazamiento vertical */
+body {
+  overflow-x: hidden; /* Bloquea el desplazamiento horizontal */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+  width: 100%; /* Asegura que el cuerpo ocupe toda la pantalla */
+}
+
+/* Limitar el ancho máximo para evitar desplazamiento horizontal */
+.container-fluid, .row, .col-auto {
+  max-width: 100%; /* Asegura que el contenedor no se extienda más allá del 100% del ancho */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Asegura que el texto se ajuste y no se desborde horizontalmente */
+.text-container {
+  word-wrap: break-word; /* Rompe palabras largas para que se ajusten al contenedor */
+  max-width: 100%; /* Limita el ancho del contenedor de texto */
+  overflow: hidden; /* Evita que el texto se desborde */
+}
+
+/* Ajuste del contenedor principal */
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Puedes añadir más ajustes específicos si es necesario */
