@@ -1,10 +1,13 @@
 import React from "react";
+import Home from "./home";
 
 const Configuracion = () => {
   return (
-    <div>
-      <h1>componente de mi Configuracion </h1>
-    </div>
+    <Home>
+      <div>
+        <h1>componente de mi Configuracion </h1>
+      </div>
+    </Home>
   );
 };
 

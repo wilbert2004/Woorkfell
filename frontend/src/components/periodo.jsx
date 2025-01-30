@@ -1,11 +1,16 @@
 import React from "react";
+import Home from "./home";
 
-const periodo = () => {
+const Periodo = () => {
   return (
-    <div>
-      <h1>soy el periodo </h1>
-    </div>
+    <Home>
+      <h1>Gestión del Periodo</h1>
+      <p>
+        Aquí se gestiona la información del periodo. Puedes agregar o modificar
+        los datos relacionados.
+      </p>
+    </Home>
   );
 };
 
-export default periodo;
+export default Periodo;

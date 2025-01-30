@@ -16,14 +16,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { IoIosNotifications } from "react-icons/io";
 
-const Home = () => {
+const Home = ({ children }) => {
   return (
     <div>
       <div className="dropdown">
         <nav
           className="navbar navbar-light bg-light"
           style={{
-            borderBottom: "2px solid black", // Línea negra debajo del navbar
+            borderBottom: "1px solid black", // Línea negra debajo del navbar
             padding: "0", // Eliminar margen y relleno
           }}
         >
@@ -112,6 +112,15 @@ const Home = () => {
               paddingTop: "20px",
             }}
           >
+            <h6
+              style={{
+                color: "white",
+                fontSize: "12px",
+              }}
+            >
+              Modulos
+            </h6>
+
             <ul style={{ listStyleType: "none", padding: 0 }}>
               {/* Modulo de Periodo */}
               <li className="nav-item" style={{ marginBottom: "20px" }}>
@@ -279,12 +288,9 @@ const Home = () => {
           </div>
 
           {/* Contenido principal */}
-          <div className="col">
-            <h2>Contenido Principal</h2>
-            <p>
-              Aquí puedes comenzar a escribir el contenido principal de la
-              página.
-            </p>
+          <div className="col p-4">
+            {children}
+
             {/* Puedes agregar más contenido aquí */}
           </div>
         </div>

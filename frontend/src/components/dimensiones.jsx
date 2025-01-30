@@ -1,10 +1,12 @@
 import React from "react";
-
+import Home from "./home";
 const dimensiones = () => {
   return (
-    <div>
-      <h1>soy el menu de dimensiones</h1>
-    </div>
+    <Home>
+      <div>
+        <h1>soy el menu de dimensiones</h1>
+      </div>
+    </Home>
   );
 };
 

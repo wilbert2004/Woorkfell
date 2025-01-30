@@ -1,10 +1,12 @@
 import React from "react";
-
+import Home from "./home";
 const Planaccion = () => {
   return (
-    <div>
-      <h2>este es mi componente de mi plan de accion </h2>
-    </div>
+    <Home>
+      <div>
+        <h2>este es mi componente de mi plan de accion </h2>
+      </div>
+    </Home>
   );
 };
 
