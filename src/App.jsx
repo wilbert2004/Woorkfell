@@ -41,6 +41,7 @@ function App() {
         <Route path="/preguntas" element={<Preguntas />}></Route>
         <Route path="/escalas" element={<Escalas />}></Route>
         <Route path="/resultados" element={<Resultados />}></Route>
+        <Route path="/EncuestasAPP" element={<Encuestas />}></Route>
         <Route
           path="/nivelsatisfaccion"
           element={<Nivelsatisfaccion />}
