@@ -9,6 +9,8 @@ const Listapuestos = () => {
       <CiUser />
       <br></br>
       <button className="rounded-pill">Haz click aqui</button>
+      <br></br>
+      <button className="rounded-pill">Haz click aqui tambien</button>
     </div>
     
   );
