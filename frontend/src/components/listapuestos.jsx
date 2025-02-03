@@ -17,6 +17,35 @@ const Listapuestos = () => {
     setSelectedJob(job);
   };
 
+  const [jobToDelete, setJobToDelete] = useState(null);
+  
+  const handleDeleteJob = () => {
+    if (jobToDelete) {
+      setJobs(jobs.filter((job) => job.id !== jobToDelete.id));
+      setJobToDelete(null);
+      document.querySelector("#deleteModal .btn-close").click();
+    }
+  };
+
+  const handleSaveEditJob = () => {
+    if (!selectedJob) return;
+  
+    setJobs(jobs.map((job) => (job.id === selectedJob.id ? selectedJob : job)));
+    setSelectedJob(null); // Limpiar el estado
+    document.querySelector("#editModal .btn-close").click(); // Cerrar el modal
+  };
+  
+
+
+  const [selectedDepartment, setSelectedDepartment] = useState("Seleccionar departamento");
+
+  const handleSelectDepartment = (department) => {
+    setSelectedDepartment(department);
+    setNewJob({ ...newJob, department }); // Update department in the form
+  };
+
+
+
   const [newJob, setNewJob] = useState({title: "", department: ""});
 
   const handleAddJob = () => {
@@ -28,6 +57,8 @@ const Listapuestos = () => {
 
     setNewJob({ title: "", department: "" });
     document.querySelector("#addModal .btn-close").click();
+    handleSelectDepartment("Seleccionar departamento");
+    setNewJob({ title: "", department: "" });
   };
 
   return (
@@ -98,15 +129,22 @@ const Listapuestos = () => {
                   </div>
                   {/* Seccion para el nuevo Departamento */}
                   <div className="mb-3">
-                    <label className="form-label">Departamento</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={newJob.department}
-                      onChange={(e) => setNewJob({ ...newJob, department: e.target.value })}
-                      placeholder="Ej. Desarrollo"
-                    />
-                  </div>
+                      <label className="form-label">Departamento</label>
+                      <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                          {selectedDepartment}
+                        </button>
+                        <ul className="dropdown-menu">
+                          {["Soporte IT", "RRHH", "Contabilidad", "Mantenimiento", "Gerencia"].map((dept) => (
+                            <li key={dept}>
+                              <button className="dropdown-item" type="button" onClick={() => handleSelectDepartment(dept)}>
+                                {dept}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                 </form>
               </div>
               {/* Final del contenido de modal */}
@@ -114,7 +152,7 @@ const Listapuestos = () => {
               {/* Botones de cierre y guardar */}
               <div className="modal-footer">
                 <button type="button" className="btn btn-seconday" data-bs-dismiss="modal">
-                  Deshacer
+                  Cancelar
                 </button>
                 <button type="button" className="btn btn-primary" onClick={handleAddJob}>
                   Agregar
@@ -185,7 +223,7 @@ const Listapuestos = () => {
                         <MdEdit className="me-2" />
                         Editar
                       </button>
-                      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                      <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() =>setJobToDelete(job)}>
                         <MdDelete className="me-2" />
                         Eliminar
                       </button>
@@ -219,13 +257,22 @@ const Listapuestos = () => {
                     </div>
                     <div className="mb-3">
                       <label className="form-label">Departamento</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={selectedJob.department}
-                        onChange={(e) => setSelectedJob({ ...selectedJob, department: e.target.value })}
-                      />
+                      <div className="dropdown">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                          {selectedDepartment}
+                        </button>
+                        <ul className="dropdown-menu">
+                          {["Soporte IT", "RRHH", "Contabilidad", "Mantenimiento", "Gerencia"].map((dept) => (
+                            <li key={dept}>
+                              <button className="dropdown-item" type="button" onClick={() => handleSelectDepartment(dept)}>
+                                {dept}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
+
                   </form>
                 ) : (
                   <p>No job selected</p>
@@ -235,7 +282,7 @@ const Listapuestos = () => {
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                   Cerrar
                 </button>
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-primary" onClick={handleSaveEditJob}>
                   Guardar cambios
                 </button>
               </div>
@@ -247,7 +294,7 @@ const Listapuestos = () => {
         {/* Modal de Eliminación */}
 
         {/* Modal de Edición */}
-        <div className="modal fade" id="editModal" tabIndex="-1" aria-hidden="true">
+        <div className="modal fade" id="deleteModal" tabIndex="-1" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
@@ -255,48 +302,27 @@ const Listapuestos = () => {
                 <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div className="modal-body">
-                {selectedJob ? (
-                  <form>
-                    <div className="mb-3">
-                      <label className="form-label">Puesto</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={selectedJob.title}
-                        onChange={(e) => setSelectedJob({ ...selectedJob, title: e.target.value })}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">Departamento</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={selectedJob.department}
-                        onChange={(e) => setSelectedJob({ ...selectedJob, department: e.target.value })}
-                      />
-                    </div>
-                  </form>
+                {jobToDelete ? (
+                  <p>¿Desea eliminar <strong>{jobToDelete.title}</strong> de {jobToDelete.department}?</p>
                 ) : (
-                  <p>No job selected</p>
+                  <p>No se ha seleccionado ningún puesto.</p>
                 )}
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-                  Cerrar
+                  Cancelar
                 </button>
-                <button type="button" className="btn btn-primary">
-                  Guardar cambios
+                <button type="button" className="btn btn-danger" onClick={handleDeleteJob}>
+                  Eliminar
                 </button>
-              </div>
             </div>
           </div>
         </div>
-
+      </div>
         {/* Fin de modal de eliminacion */}
 
       </div>
     </Home>
   );
 };
-
 export default Listapuestos;
