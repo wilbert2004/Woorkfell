@@ -6,6 +6,11 @@ const Configuracion = () => {
     <Home>
       <div>
         <h1>Hola wilbert chan </h1>
+        <h1>Hola wilbert chan </h1>
+        <h1>Hola wilbert chan </h1>
+        <h1>Hola wilbert chan </h1>
+        <h1>Hola wilbert chan </h1>
+        <h1>Hola wilbert chan </h1>
       </div>
     </Home>
   );
