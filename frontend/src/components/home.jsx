@@ -100,7 +100,7 @@ const Home = ({ children }) => {
         </nav>
       </div>
 
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <div className="row flex-nowrap">
           {/* Sidebar */}
           <div
