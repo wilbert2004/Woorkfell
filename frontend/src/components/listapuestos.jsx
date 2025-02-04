@@ -20,7 +20,26 @@ const Listapuestos = () => {
   const [jobs, setJobs] = useState([
     { id: 1, title: "Jefe de Contabilidad Fiscal", department: "Contabilidad" },
     { id: 2, title: "Jefe de Soporte IT", department: "Soporte IT" },
+    { id: 3, title: "Analista de Recursos Humanos", department: "RRHH" },
+    { id: 4, title: "Coordinador de Mantenimiento", department: "Mantenimiento" },
+    { id: 5, title: "Gerente General", department: "Gerencia" },
+    { id: 6, title: "Especialista en Redes IT", department: "Soporte IT" },
+    { id: 7, title: "Asistente de RRHH", department: "RRHH" },
+    { id: 8, title: "Contador Senior", department: "Contabilidad" },
+    { id: 9, title: "Técnico de Mantenimiento", department: "Mantenimiento" },
+    { id: 10, title: "Director Ejecutivo", department: "Gerencia" },
+    { id: 11, title: "Auditor Interno", department: "Contabilidad" },
+    { id: 12, title: "Administrador de Sistemas", department: "Soporte IT" },
+    { id: 13, title: "Psicólogo Organizacional", department: "RRHH" },
+    { id: 14, title: "Supervisor de Mantenimiento", department: "Mantenimiento" },
+    { id: 15, title: "Asistente Administrativo", department: "Gerencia" },
+    { id: 16, title: "Analista de Nómina", department: "RRHH" },
+    { id: 17, title: "Contador Junior", department: "Contabilidad" },
+    { id: 18, title: "Técnico de Soporte IT", department: "Soporte IT" },
+    { id: 19, title: "Operador de Maquinaria", department: "Mantenimiento" },
+    { id: 20, title: "Gerente de Proyectos", department: "Gerencia" },
   ]);
+  
 
   const handleEdit = (job) => {
     setSelectedJob(job);
@@ -129,7 +148,7 @@ const Listapuestos = () => {
 
   return (
     <Home>
-      <div className="container">
+      <div className="container-fluid">
         <div className="navbar">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
@@ -151,22 +170,22 @@ const Listapuestos = () => {
           </nav>
         </div>
 
-        <div className="row">
-          <div className="col-md-10" style={{ color: "#ACAAAA" }}>
+        <div className="d-flex flex-row mb-3 justify-content-between align-items-center">
+          <div className="p-2" style={{ color: "#ACAAAA" }}>
             <p style={{ fontSize: "1.8rem", marginTop: ".93rem" }}>
               Indicaciones: En este módulo podrás agregar los puestos de tu
               empresa.
             </p>
           </div>
-          <div className="col-md-2 d-flex flex-column justify-content-center align-items-center">
-            <div className="text-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <div className="text-center p-2">
               <FaHandHolding className="mb-2" style={{ fontSize: "2rem", color: "#0d6efd" }} />
               <FaInfoCircle className="mb-2" style={{ fontSize: "1rem", color: "#0d6efd" }} />
+              <button className="btn btn-primary mt-auto d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#addModal">
+                <FaPlus className="me-2" style={{ fontSize: "1.1rem" }} />
+                Nuevo puesto
+              </button>
             </div>
-            <button className="btn btn-primary mt-auto d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#addModal">
-              <FaPlus className="me-2" style={{ fontSize: "1.1rem" }} />
-              Nuevo puesto
-            </button>
           </div>
         </div>
 
@@ -259,13 +278,13 @@ const Listapuestos = () => {
             </div>
 
 
-              <div class="input-group d-flex justify-content-around" style={{width:"50%"}} >
+              <div class="input-group d-flex justify-content-around" style={{width:"50%", marginLeft: "1%"}} >
                 <span class="input-group-text" id="basic-addon1"><CiSearch/></span>
                 <input style={{opacity:"60%"}} type="text" class="form-control text-center" placeholder="Buscar por puestos" value ={searchTerm} aria-label="Username" aria-describedby="basic-addon1" onChange={(e) => handleJobSearch(e)}/>
               </div>
 
               <div>
-                <button style={{width: "15rem"}} className="btn btn-primary ms-2 " onClick={handleShowAllJobs}><BiShow style={{marginTop: "-.2rem", marginRight:".2rem"}}/>Mostrar todos los puestos</button>  
+                <button className="btn btn-primary ms-2 " onClick={handleShowAllJobs}><BiShow style={{marginTop: "-.2rem", marginRight:".2rem"}}/>Mostrar todos los puestos</button>  
               </div>
           </div>
         {/* Fin de buscador de puestos y filtrador por departamentos */}	
@@ -277,9 +296,9 @@ const Listapuestos = () => {
           <thead className="table-dark">
             <tr>
             <th scope="col" style={{ width: '5%' }}>#</th>
-            <th scope="col" style={{ width: '50%' }}>Puesto</th>
-            <th scope="col" style={{ width: '30%' }}>Departamento</th>
-            <th scope="col" style={{ width: '15%' }}>Opciones</th>
+            <th scope="col" style={{ width: '25%' }}>Puesto</th>
+            <th scope="col" style={{ width: '25%' }}>Departamento</th>
+            <th scope="col" style={{ width: '25%' }}>Opciones</th>
             </tr>
           </thead>
           <tbody>
