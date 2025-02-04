@@ -28,11 +28,15 @@ const Listapuestos = () => {
   };
 
   const handleSaveEditJob = () => {
-    if (!selectedJob) return;
+    if (!selectedJob.title || !selectedJob.department) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
   
     setJobs(jobs.map((job) => (job.id === selectedJob.id ? selectedJob : job)));
-    setSelectedJob(null); // Limpiar el estado
-    document.querySelector("#editModal .btn-close").click(); // Cerrar el modal
+    setSelectedJob(null);
+    setSelectedDepartment("Seleccionar departamento"); // Reiniciar selección
+    document.querySelector("#editModal .btn-close").click();
   };
   
 
@@ -41,7 +45,12 @@ const Listapuestos = () => {
 
   const handleSelectDepartment = (department) => {
     setSelectedDepartment(department);
-    setNewJob({ ...newJob, department }); // Update department in the form
+  
+    if (selectedJob) {
+      setSelectedJob({ ...selectedJob, department });
+    } else {
+      setNewJob({ ...newJob, department });
+    }
   };
 
 
