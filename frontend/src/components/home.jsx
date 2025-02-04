@@ -19,12 +19,17 @@ import { IoIosNotifications } from "react-icons/io";
 const Home = ({ children }) => {
   return (
     <div>
-      <div className="dropdown">
+      <div className="dropdown position-sticky top-0 w-100" 
+      style={{
+        backgroundColor: "white", // Fondo blanco sólido
+        zIndex: "10",
+      }}>
         <nav
           className="navbar navbar-light bg-light"
           style={{
             borderBottom: "1px solid black", // Línea negra debajo del navbar
             padding: "0", // Eliminar margen y relleno
+             // Asegura que el navbar esté encima de otros elementos
           }}
         >
           <div
@@ -104,7 +109,7 @@ const Home = ({ children }) => {
         <div className="row flex-nowrap">
           {/* Sidebar */}
           <div
-            className="col-auto col-md-3 col-xl-2 px-sm-5 px-0"
+            className="col-auto col-md-3 col-xl-2 px-sm-5 px-0 position-fixed top-10 start-0"
             style={{
               backgroundColor: "#636363",
               minHeight: "100vh",
@@ -275,7 +280,7 @@ const Home = ({ children }) => {
                   </li>
                   <li>
                     <Link
-                      to="/Configuraciones"
+                      to="/Configuracion"
                       className="text-white text-decoration-none d-flex align-items-center ps-4 py-2"
                       style={{ fontSize: "14px" }}
                     >
@@ -288,7 +293,7 @@ const Home = ({ children }) => {
           </div>
 
           {/* Contenido principal */}
-          <div className="col p-4">
+          <div className="col p-4" style={{ marginLeft: "250px" }}>
             {children}
 
             {/* Puedes agregar más contenido aquí */}
