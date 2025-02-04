@@ -53,128 +53,85 @@ const Resultados = () => {
             <button className="btn btn-primary m-1">Exportar a excel</button>
             <button className="btn btn-primary m-1">Exportar a PDF</button>
           </div>
-          {/* elemento para ver periodos disponibles  */}
+          {/* contenedor del menu principal de dos desplamientos   */}
           <div
-            className="container border mt-3 mx-auto m-2"
+            className="container border mt-4 p-3 d-flex flex-column align-items-center justify-content-around rounded text-center"
             style={{
-              width: "90%",
-              maxWidth: "800px", // Limitar el ancho máximo
-              height: "auto",
-              borderRadius: "10px",
+              paddingBottom: "0.9em",
             }}
           >
-            <h5
-              className="text-center mt-3"
-              style={{
-                opacity: 0.5,
-                fontSize: "1.2rem", // Usar unidades relativas para tamaños de texto
-              }}
-            >
-              Periodos
-            </h5>
-            <div
-              className="border d-flex justify-content-between align-items-center p-3"
-              style={{
-                height: "50%", // Adaptable al contenido
-                flexWrap: "wrap", // Permite que los elementos se acomoden en pantallas pequeñas
-              }}
-            >
-              <span className="d-flex justify-content-center align-items-center">
-                <BsCalendar2WeekFill
-                  style={{
-                    width: "2rem", // Usar unidades relativas
-                    height: "2rem",
-                    opacity: 0.5,
-                  }}
-                />
-              </span>
-              <span
-                className="text-center"
-                style={{
-                  fontSize: "1rem",
-                  fontWeight: "bold",
-                  color: "#000",
-                  flex: "1", // Permite que ocupe más espacio
-                  margin: "0 10px",
-                }}
-              >
-                Periodo 1 Enero - Febrero{" "}
-              </span>
-              <span className="dropdown">
+            {/* contenedor de periodo */}
+            <div className="border container p-3 rounded">
+              <h5 className="opacity-50"> Periodos</h5>
+              <div className="dropdown container">
                 <button
+                  className="btn btn-transparent dropdown-toggle  w-75 "
                   type="button"
-                  className="btn btn-white dropdown-toggle"
+                  id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
-                ></button>
-              </span>
+                >
+                  <BsCalendar2Date style={{ marginRight: "10px" }} />
+                  Periodos disponibles
+                </button>
+                <ul
+                  className="dropdown-menu  text-center w-75"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Periodo 1 Enero - Febrero
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Periodo 1 Marzo - Abril
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          {/*  elemento para ver elemento a visualizar */}
-          <div
-            className="container border mt-3 mx-auto m-4"
-            style={{
-              width: "90%",
-              maxWidth: "800px", // Limitar el ancho máximo
-              height: "auto",
-              borderRadius: "10px",
-            }}
-          >
-            <h5
-              className="text-center mt-3"
-              style={{
-                opacity: 0.5,
-                fontSize: "1.2rem", // Usar unidades relativas para tamaños de texto
-              }}
-            >
-              Elementos de visualizacion
-            </h5>
-            <div
-              className="border d-flex justify-content-between align-items-center p-3"
-              style={{
-                height: "50%", // Adaptable al contenido
-                flexWrap: "wrap", // Permite que los elementos se acomoden en pantallas pequeñas
-              }}
-            >
-              <span className="d-flex justify-content-center align-items-center">
-                <BsCalendar2WeekFill
-                  style={{
-                    width: "2rem", // Usar unidades relativas
-                    height: "2rem",
-                    opacity: 0.5,
-                  }}
-                />
-              </span>
-              <span
-                className="text-center"
-                style={{
-                  fontSize: "1rem",
-                  fontWeight: "bold",
-                  color: "#000",
-                  flex: "1", // Permite que ocupe más espacio
-                  margin: "0 10px",
-                }}
-              >
-                Mostrar todo
-              </span>
-              <span className="dropdown">
+            <br />
+
+            {/*  contenedore de datos a visualiazar  */}
+            <div className="border container p-3 rounded">
+              <h5 className="opacity-50"> Elementos de visualizacion </h5>
+              <div className="dropdown container">
                 <button
+                  className="btn btn-transparent dropdown-toggle  w-75 "
                   type="button"
-                  className="btn btn-white dropdown-toggle"
+                  id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
-                ></button>
-              </span>
+                >
+                  <BsCalendar2Date style={{ marginRight: "10px" }} />
+                  Mostrar Todo
+                </button>
+                <ul
+                  className="dropdown-menu  text-center w-75"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Departamentos
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Dimensiones
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div
-            className="container border  "
+            className="container border mt-4 p-3 d-flex flex-column align-items-center justify-content-around rounded"
             style={{
-              width: "90%",
-              maxWidth: "800px", // Limitar el ancho máximo
+              paddingBottom: "0.9em",
               height: "auto",
             }}
           >
-            <div className="col-xs-12 text-center">
+            <div className="col-xs-12 text-center container">
               <h4
                 className="text text-center"
                 style={{
@@ -189,7 +146,11 @@ const Resultados = () => {
                 <div className="col-6  ">
                   <h6 className="">Filtrar genero</h6>
                   <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">Hombres</option>
                       <option value="">Mujeres</option>
@@ -200,7 +161,11 @@ const Resultados = () => {
                 <div className="col-6">
                   <h6>Filtrar edad</h6>
                   <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">18-24 años</option>
                       <option value="">25-34 años</option>
@@ -213,7 +178,11 @@ const Resultados = () => {
                 <div className="col-6">
                   <h6>Filtrar departamento</h6>
                   <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">Aguascalientes</option>
                       <option value="">Baja California</option>
@@ -224,7 +193,11 @@ const Resultados = () => {
                 <div className="col-6">
                   <h6>Filtrar Puesto </h6>
                   <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">Desarrollador back-end</option>
                       <option value="">Desarrollador front-end</option>
@@ -237,7 +210,11 @@ const Resultados = () => {
                 <div className="col-6">
                   <h6>Filtrar centro de trabajo</h6>
                   <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">Centro de desarrollo</option>
                       <option value="">Centro de soporte</option>
@@ -246,8 +223,12 @@ const Resultados = () => {
                 </div>
                 <div className="col-6">
                   <h6>Filtrar rango antiguedad</h6>
-                  <div className="form-check">
-                    <select name="" id="" className="w-75 p-1 rounded">
+                  <div className="form-check ">
+                    <select
+                      name=""
+                      id=""
+                      className="w-75 p-1 rounded text-center"
+                    >
                       <option value="">Todos</option>
                       <option value="">1 a 5 años</option>
                       <option value="">6 a 10 años</option>
@@ -256,6 +237,147 @@ const Resultados = () => {
                 </div>
               </div>
             </div>
+          </div>
+          {/* menu desplazamiento de mostrar desglose  con dimensiones en grafica  */}
+          <div
+            className="container border mt-4 p-3 d-flex flex-column align-items-center justify-content-around rounded text-center"
+            style={{
+              paddingBottom: "0.9em",
+            }}
+          >
+            <h5 className="opacity-50 p-2">
+              Mostrar Desglose con Dimension de grafica{" "}
+            </h5>
+
+            <div className="container">
+              <div className="row">
+                {/* contenedor de generon */}
+                <div className="col ">
+                  <label
+                    className="border p-2  rounded w-50"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox1"
+                      value="first_checkbox"
+                      className="w-25"
+                    />{" "}
+                    Genero
+                  </label>
+                </div>
+                <div className="col">
+                  <label
+                    className="border p-2  rounded w-50"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox2"
+                      value="second_checkbox"
+                      className="w-25"
+                    />{" "}
+                    Edad
+                  </label>
+                </div>
+                <div className="col">
+                  <label
+                    className="border p-2  rounded w-50"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox3"
+                      value="third_checkbox"
+                      className="w-25"
+                    />{" "}
+                    Departamento
+                  </label>
+                </div>
+              </div>
+              <div className="row p-3">
+                <div className="col">
+                  <label
+                    className="border p-2  rounded w-50"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox4"
+                      value="fourth_checkbox"
+                      className="w-25"
+                    />{" "}
+                    Puesto
+                  </label>
+                </div>
+                <div className="col">
+                  <label
+                    className="border p-2  rounded w-75"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox5"
+                      value="fifth_checkbox"
+                      className=""
+                    />{" "}
+                    Centro de trabajo
+                  </label>
+                </div>
+                <div className="col">
+                  <label
+                    className="border p-2  rounded w-75"
+                    style={{
+                      backgroundColor: "#D9D9D9",
+                      color: "#333",
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      id="cbox5"
+                      value="fifth_checkbox"
+                      className=""
+                    />{" "}
+                    Antiguedad
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="container  mt-4 p-3 d-flex flex-column align-items-center justify-content-around rounded text-center"
+          style={{
+            paddingBottom: "0.9em",
+          }}
+        >
+          <div className="row p-5 w-100">
+            <div className="col"></div>
+            <div className="col">
+              <button
+                type="button"
+                className="btn btn-primary rouded text-center"
+              >
+                Procesar reporte
+              </button>
+            </div>
+            <div className="col"></div>
           </div>
         </div>
       </div>
