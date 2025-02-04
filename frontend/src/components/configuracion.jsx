@@ -5,7 +5,7 @@ const Configuracion = () => {
   return (
     <Home>
       <div>
-        <h1>componente de mi Configuracion </h1>
+        <h1>Hola wilbert chan </h1>
       </div>
     </Home>
   );
