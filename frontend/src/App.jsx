@@ -13,6 +13,7 @@ import Nivelsatisfaccion from "./components/nivelsatisfaccion";
 import Comparacion from "./components/comparacion";
 import Listapuestos from "./components/listapuestos";
 import Planaccion from "./components/planaccion";
+import Configuracion from "./components/configuracion";
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -41,13 +42,11 @@ function App() {
         <Route path="/preguntas" element={<Preguntas />}></Route>
         <Route path="/escalas" element={<Escalas />}></Route>
         <Route path="/resultados" element={<Resultados />}></Route>
-        <Route
-          path="/nivelsatisfaccion"
-          element={<Nivelsatisfaccion />}
-        ></Route>
+        <Route path="/nivelsatisfaccion" element={<Nivelsatisfaccion />}></Route>
         <Route path="/comparacion" element={<Comparacion />}></Route>
         <Route path="/listapuestos" element={<Listapuestos />}></Route>
         <Route path="/planaccion" element={<Planaccion />}></Route>
+        <Route path="/configuracion" element={<Configuracion />}></Route>
         {/* Agregar rutas para las otras secciones */}
       </Routes>
     </Router>
