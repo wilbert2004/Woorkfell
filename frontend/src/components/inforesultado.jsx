@@ -6,6 +6,9 @@ const InfoResultado = () => {
     <Home>
       <div className="container">
         <h1>soy el componente de resultado</h1>
+        <h1>soy el componente de resultado</h1>
+        <h1>soy el componente de resultado</h1>
+        <h1>soy el componente de resultado</h1>
       </div>
     </Home>
   );
