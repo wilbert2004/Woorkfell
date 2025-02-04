@@ -82,7 +82,7 @@ const Listapuestos = () => {
     handleSelectDepartment("Seleccionar departamento");
     setNewJob({ title: "", department: "" });
     showNotification("¡Puesto agregado correctamente!");
-
+    handleShowAllJobs();
   };
   {/* Funciones para el buscador de puestos */}
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
