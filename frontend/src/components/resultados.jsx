@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Home from "./home";
 import { Link } from "react-router-dom";
 import { FaCalendarAlt } from "react-icons/fa";
-
+import listapuestos from "./listapuestos";
 import {
   BsCalendar2WeekFill,
   BsCalendar2Date,
@@ -11,7 +11,13 @@ import {
   BsBarChart,
   BsGear,
 } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 const Resultados = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/inforesultado");
+  };
   return (
     <Home>
       <div className="container">
@@ -360,7 +366,6 @@ const Resultados = () => {
             </div>
           </div>
         </div>
-
         <div
           className="container  mt-4 p-3 d-flex flex-column align-items-center justify-content-around rounded text-center"
           style={{
@@ -373,6 +378,7 @@ const Resultados = () => {
               <button
                 type="button"
                 className="btn btn-primary rouded text-center"
+                onClick={handleNavigate}
               >
                 Procesar reporte
               </button>
@@ -380,6 +386,7 @@ const Resultados = () => {
             <div className="col"></div>
           </div>
         </div>
+        <listapuestos />
       </div>
     </Home>
   );
