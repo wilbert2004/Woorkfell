@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Home from "./home";
 import { Link } from "react-router-dom";
-import { FaHandHolding, FaInfoCircle, FaPlus, FaUserTie } from "react-icons/fa";
+import { FaHandHolding, FaInfoCircle, FaPlus} from "react-icons/fa";
 import { MdEdit, MdDelete } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { BiShow } from "react-icons/bi";
+import { LiaUserTieSolid } from "react-icons/lia";
 
 const Listapuestos = () => {
   const [notification, setNotification] = useState(""); // Para manejar el mensaje de la notificación
@@ -154,7 +155,7 @@ const Listapuestos = () => {
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
                 <Link to="/Listapuestos" className="link-secondary">
-                  <FaUserTie style={{ marginRight: "3px" }} />
+                  <LiaUserTieSolid style={{ marginRight: "3px", width: "105%", height: "105%"}} />
                 </Link>
               </li>
               <li
