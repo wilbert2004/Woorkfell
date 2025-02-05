@@ -5,6 +5,9 @@ const dimensiones = () => {
     <Home>
       <div>
         <h1>soy el menu de dimensiones</h1>
+        <h1>soy el menu de dimensiones</h1>
+        <h1>soy el menu de dimensiones</h1>
+        <h1>soy el menu de dimensiones</h1>
       </div>
     </Home>
   );
