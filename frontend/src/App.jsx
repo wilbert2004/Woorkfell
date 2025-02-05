@@ -17,7 +17,7 @@ import InfoResultado from "./components/inforesultado";
 import Configuracion from "./components/configuracion";
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import Triangulo from "./components/triangulo";
 function App() {
   const [data, setData] = useState("");
 
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <Router>
+      <Triangulo></Triangulo>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />}></Route>
@@ -43,7 +44,10 @@ function App() {
         <Route path="/preguntas" element={<Preguntas />}></Route>
         <Route path="/escalas" element={<Escalas />}></Route>
         <Route path="/resultados" element={<Resultados />}></Route>
-        <Route path="/nivelsatisfaccion" element={<Nivelsatisfaccion />}></Route>
+        <Route
+          path="/nivelsatisfaccion"
+          element={<Nivelsatisfaccion />}
+        ></Route>
         <Route path="/comparacion" element={<Comparacion />}></Route>
         <Route path="/listapuestos" element={<Listapuestos />}></Route>
         <Route path="/planaccion" element={<Planaccion />}></Route>
