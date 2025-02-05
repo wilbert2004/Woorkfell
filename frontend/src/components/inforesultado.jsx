@@ -1,5 +1,7 @@
 import React from "react";
 import Home from "./home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const InfoResultado = () => {
   return (
@@ -15,11 +17,13 @@ const InfoResultado = () => {
           </p>
 
           <div className="row article">
-            <div className="col-sm">Rangos por grupos o variables </div>
+            <div className="col-sm ">
+              <span>Rangos por grupos o variables </span>
+            </div>
             <div className="col-sm">Rangos por preguntas </div>
           </div>
           <div className="row article">
-            <div className="col-sm">Opinion favorables de (4 a 5) </div>
+            <div className="col-sm m-3">Opinion favorables de (4 a 5) </div>
             <div className="col-sm">Opinion favorables de (4 a 5) </div>
           </div>
           <div className="row article">
