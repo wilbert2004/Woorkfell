@@ -35,7 +35,6 @@ function App() {
 
   return (
     <Router>
-      <Triangulo></Triangulo>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />}></Route>
