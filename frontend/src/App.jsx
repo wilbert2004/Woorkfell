@@ -15,6 +15,8 @@ import Listapuestos from "./components/listapuestos";
 import Planaccion from "./components/planaccion";
 import InfoResultado from "./components/inforesultado";
 import Configuracion from "./components/configuracion";
+import InfoNivelSatis from "./components/infonivelsatis";
+
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Triangulo from "./components/triangulo";
@@ -52,6 +54,7 @@ function App() {
         <Route path="/planaccion" element={<Planaccion />}></Route>
         <Route path="/inforesultado" element={<InfoResultado />} />
         <Route path="/configuracion" element={<Configuracion />}></Route>
+        <Route path="/infonivelsatis" element={<InfoNivelSatis />} />
 
         {/* Agregar rutas para las otras secciones */}
       </Routes>
