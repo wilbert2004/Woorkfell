@@ -4,26 +4,8 @@ import { BsReceipt } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { BsCalendar2Date } from "react-icons/bs";
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from "recharts";
 
 const Nivelsatisfaccion = () => {
-  const data = [
-    { name: "Jan", uv: 400 },
-    { name: "Feb", uv: 300 },
-    { name: "Mar", uv: 200 },
-    { name: "Apr", uv: 278 },
-    { name: "May", uv: 189 },
-    { name: "Jun", uv: 239 },
-    { name: "Jul", uv: 349 },
-    { name: "Aug", uv: 200 },
-  ];
   const navigate = useNavigate();
 
   const handleNavigate = () => {
