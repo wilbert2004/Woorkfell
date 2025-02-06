@@ -14,10 +14,11 @@ import Comparacion from "./components/comparacion";
 import Listapuestos from "./components/listapuestos";
 import Planaccion from "./components/planaccion";
 import InfoResultado from "./components/inforesultado";
+import Infonivelsatis from "./components/infonivelsatis";
 import Configuracion from "./components/configuracion";
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Triangulo from "./components/triangulo";
+import Cuadrado from "./components/cuadrado";
 function App() {
   const [data, setData] = useState("");
 
@@ -51,6 +52,8 @@ function App() {
         <Route path="/listapuestos" element={<Listapuestos />}></Route>
         <Route path="/planaccion" element={<Planaccion />}></Route>
         <Route path="/inforesultado" element={<InfoResultado />} />
+        <Route path="/infonivelsatis" element={<Infonivelsatis />} />
+
         <Route path="/configuracion" element={<Configuracion />}></Route>
 
         {/* Agregar rutas para las otras secciones */}

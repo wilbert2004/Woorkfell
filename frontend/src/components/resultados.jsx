@@ -386,7 +386,6 @@ const Resultados = () => {
             <div className="col"></div>
           </div>
         </div>
-        <listapuestos />
       </div>
     </Home>
   );
