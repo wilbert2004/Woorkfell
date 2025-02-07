@@ -22,23 +22,8 @@ const Configuracion = () => {
                   <Link to="/configuracion" className="link-secondary">
                     Configuraciones
                   </Link>
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <Link to="/configuracion" className="link-secondary">
-                  <RiUserSettingsLine style={{ marginRight: "3px" }} />
-                </Link>
-              </li>
-              <li
-                className="breadcrumb-item active"
-                aria-current="page"
-                style={{ marginTop: "2px" }}
-              >
-                <Link to="/configuracion" className="link-secondary">
-                  Configuracion
-                </Link>
-              </li>
-            </ol>
+                </li>
+              </ol>
           </nav>
         </div>
 
@@ -119,9 +104,7 @@ const Configuracion = () => {
               <button type="button" className="btn btn-primary btn-lg">Guardar cambios</button>
             </div>
         </div>
-
-
-      </div>
+      </div>  
     </Home>
   );
 };
