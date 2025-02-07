@@ -32,14 +32,14 @@ const Configuracion = () => {
             <p className="h2 text-muted">Selecciona el periodo</p>
           </div>
             
-          <div className="dropend">
+          <div className="dropdown">
             <button className="btn btn-secondary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Rango de interpretación de grupos o variables
             </button>
-            <ul className="dropdown-menu">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
+            <ul className="dropdown-menu w-100 text-center ">
+              <li><a className="dropdown-item" href="#">Grupo o variable 1</a></li>
+              <li><a className="dropdown-item" href="#">Grupo o variable 2</a></li>
+              <li><a className="dropdown-item" href="#">Grupo o variable 3</a></li>
             </ul>
           </div>
         </div>
