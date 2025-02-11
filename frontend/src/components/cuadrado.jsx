@@ -1,15 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const Cuadrado = ({ color, tama }) => {
-    return (
-        <div
-            style={{
-                width: tama,       // Tamaño del cuadrado
-                height: tama,      // Tamaño del cuadrado (ancho = alto)
-                backgroundColor: color,  // Color de fondo del cuadrado
-            }}
-        ></div>
-    )
-}
-
-export default Cuadrado
+const Cuadrado = ({ color, width, height, letra }) => {
+  return (
+    <div
+      style={{
+        width: width,
+        height: height,
+        backgroundColor: color,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        fontWeight: "bold",
+      }}
+    >
+      {letra}
+    </div>
+  );
+};
+export default Cuadrado;
