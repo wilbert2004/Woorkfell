@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./home";
 import Cuadrado from "./cuadrado";
+
 import {
   LineChart,
   Line,
@@ -9,17 +10,8 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+
 const Infonivelsatis = () => {
-  const data = [
-    { name: "Jan", uv: 400 },
-    { name: "Feb", uv: 300 },
-    { name: "Mar", uv: 200 },
-    { name: "Apr", uv: 278 },
-    { name: "May", uv: 189 },
-    { name: "Jun", uv: 239 },
-    { name: "Jul", uv: 349 },
-    { name: "Aug", uv: 200 },
-  ];
   return (
     <Home>
       <div className="container">
@@ -53,8 +45,7 @@ const Infonivelsatis = () => {
             <div className="col-sm ">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="green" width="30px" height="30px" />{" "}
-                  {/* Cuadrado verde */}
+                  <Cuadrado color="green" width="30px" height="30px" />
                 </div>
                 <div className="p-2">Opinion favorables (4 a 5)</div>
               </div>
@@ -82,7 +73,7 @@ const Infonivelsatis = () => {
                   <Cuadrado color="yellow" width="30px" height="30px" />{" "}
                   {/* Cuadrado amarillo */}
                 </div>
-                <div className="p-2">Opinion favorables (2 a 3.9)</div>
+                <div className="p-2">Opinion indecisa (2 a 3.9)</div>
               </div>
             </div>
             <div className="col-sm">
@@ -91,7 +82,7 @@ const Infonivelsatis = () => {
                   <Cuadrado color="yellow" width="30px" height="30px" />{" "}
                   {/* Cuadrado amarillo */}
                 </div>
-                <div className="p-2">Opinion favorables (2 a 3.9)</div>
+                <div className="p-2">Opinion indecisa (2 a 3.9)</div>
               </div>
             </div>
           </div>
@@ -122,23 +113,7 @@ const Infonivelsatis = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="text-center m-3 border ">
-          <h3 className="bg-dark text-white opacity-50">
-            Filtro seleccionado (todos)
-          </h3>
-          <div className="row">
-            <div className="col">
-              <LineChart width={600} height={300} data={data}>
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                <CartesianGrid stroke="#ccc" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-              </LineChart>
-            </div>
-            <div className="col bg-white"></div>
-          </div>
+          <div>{/* meter la grafica de termometro */}</div>
         </div>
       </div>
     </Home>
