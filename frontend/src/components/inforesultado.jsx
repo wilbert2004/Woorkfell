@@ -108,7 +108,7 @@ const InfoResultado = () => {
             </div>
           </div>
         </div>
-<<<<<<< Updated upstream
+
         <div className="border text-center m-3">
           <h4 className="bg-dark text-white opacity-50">Filtro Seleccionado</h4>
           <h5>Promedio por grupos o variable (todos)</h5>
@@ -150,11 +150,9 @@ const InfoResultado = () => {
               </tr>
             </tbody>
           </table>
-=======
-
-        <div className="border text-center ">
-          <h3 className="b-darck text-white">Filtro Seleccionado</h3>
->>>>>>> Stashed changes
+          <div className="border text-center ">
+            <h3 className="b-darck text-white">Filtro Seleccionado</h3>
+          </div>
         </div>
       </div>
     </Home>
