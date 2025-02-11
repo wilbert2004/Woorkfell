@@ -11,9 +11,10 @@ const Listapuestos = () => {
   const [notification, setNotification] = useState(""); // Para manejar el mensaje de la notificación
   const [notificationVisible, setNotificationVisible] = useState(false); // Para controlar la visibilidad de la notificación
 
-
   const [selectedJob, setSelectedJob] = useState(null);
-  const [filterDepartment, setFilterDepartment] = useState("Seleccionar departamento");
+  const [filterDepartment, setFilterDepartment] = useState(
+    "Seleccionar departamento"
+  );
 
   const handleFilterDepartment = (department) => {
     setFilterDepartment(department);
@@ -22,7 +23,11 @@ const Listapuestos = () => {
     { id: 1, title: "Jefe de Contabilidad Fiscal", department: "Contabilidad" },
     { id: 2, title: "Jefe de Soporte IT", department: "Soporte IT" },
     { id: 3, title: "Analista de Recursos Humanos", department: "RRHH" },
-    { id: 4, title: "Coordinador de Mantenimiento", department: "Mantenimiento" },
+    {
+      id: 4,
+      title: "Coordinador de Mantenimiento",
+      department: "Mantenimiento",
+    },
     { id: 5, title: "Gerente General", department: "Gerencia" },
     { id: 6, title: "Especialista en Redes IT", department: "Soporte IT" },
     { id: 7, title: "Asistente de RRHH", department: "RRHH" },
@@ -32,7 +37,11 @@ const Listapuestos = () => {
     { id: 11, title: "Auditor Interno", department: "Contabilidad" },
     { id: 12, title: "Administrador de Sistemas", department: "Soporte IT" },
     { id: 13, title: "Psicólogo Organizacional", department: "RRHH" },
-    { id: 14, title: "Supervisor de Mantenimiento", department: "Mantenimiento" },
+    {
+      id: 14,
+      title: "Supervisor de Mantenimiento",
+      department: "Mantenimiento",
+    },
     { id: 15, title: "Asistente Administrativo", department: "Gerencia" },
     { id: 16, title: "Analista de Nómina", department: "RRHH" },
     { id: 17, title: "Contador Junior", department: "Contabilidad" },
@@ -40,7 +49,6 @@ const Listapuestos = () => {
     { id: 19, title: "Operador de Maquinaria", department: "Mantenimiento" },
     { id: 20, title: "Gerente de Proyectos", department: "Gerencia" },
   ]);
-
 
   const handleEdit = (job) => {
     setSelectedJob(job);
@@ -54,7 +62,6 @@ const Listapuestos = () => {
       setJobToDelete(null);
       document.querySelector("#deleteModal .btn-close").click();
       showNotification("¡Puesto eliminado correctamente!");
-
     }
   };
 
@@ -69,12 +76,11 @@ const Listapuestos = () => {
     setSelectedDepartment("Seleccionar departamento"); // Reiniciar selección
     document.querySelector("#editModal .btn-close").click();
     showNotification("¡Puesto editado correctamente!");
-
   };
 
-
-
-  const [selectedDepartment, setSelectedDepartment] = useState("Seleccionar departamento");
+  const [selectedDepartment, setSelectedDepartment] = useState(
+    "Seleccionar departamento"
+  );
 
   const handleSelectDepartment = (department) => {
     setSelectedDepartment(department);
@@ -85,8 +91,6 @@ const Listapuestos = () => {
       setNewJob({ ...newJob, department });
     }
   };
-
-
 
   const [newJob, setNewJob] = useState({ title: "", department: "" });
 
@@ -104,7 +108,9 @@ const Listapuestos = () => {
     showNotification("¡Puesto agregado correctamente!");
     handleShowAllJobs();
   };
-  {/* Funciones para el buscador de puestos */ }
+  {
+    /* Funciones para el buscador de puestos */
+  }
   const [searchTerm, setSearchTerm] = useState(""); // Estado para almacenar el término de búsqueda
 
   const handleJobSearch = (e) => {
@@ -114,11 +120,14 @@ const Listapuestos = () => {
   };
 
   const filteredJobs = jobs.filter((job) => {
-    const matchesSearchTerm = job.title.toLowerCase().includes(searchTerm) || job.department.toLowerCase().includes(searchTerm);
-    const matchesDepartment = filterDepartment === "Seleccionar departamento" || job.department === filterDepartment;
+    const matchesSearchTerm =
+      job.title.toLowerCase().includes(searchTerm) ||
+      job.department.toLowerCase().includes(searchTerm);
+    const matchesDepartment =
+      filterDepartment === "Seleccionar departamento" ||
+      job.department === filterDepartment;
     return matchesSearchTerm && matchesDepartment;
   });
-
 
   const handleShowAllJobs = () => {
     setSearchTerm(""); // Resetea el término de búsqueda
@@ -133,19 +142,21 @@ const Listapuestos = () => {
     }, 5000); // La notificación se oculta después de 5 segundos
   };
 
-  {/* Fin de funciones para el buscador de puestos */ }
+  {
+    /* Fin de funciones para el buscador de puestos */
+  }
 
-
-  {/* Funciones para la notificación */ }
-
+  {
+    /* Funciones para la notificación */
+  }
 
   const closeNotification = () => {
     setNotificationVisible(false); // Para cerrar la notificación manualmente
   };
 
-
-
-  {/* Fin de funciones para la notificación */ }
+  {
+    /* Fin de funciones para la notificación */
+  }
 
   return (
     <Home>
@@ -155,7 +166,13 @@ const Listapuestos = () => {
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
                 <Link to="/Listapuestos" className="link-secondary">
-                  <LiaUserTieSolid style={{ marginRight: "3px", width: "105%", height: "105%" }} />
+                  <LiaUserTieSolid
+                    style={{
+                      marginRight: "3px",
+                      width: "105%",
+                      height: "105%",
+                    }}
+                  />
                 </Link>
               </li>
               <li
@@ -180,9 +197,19 @@ const Listapuestos = () => {
           </div>
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="text-center p-2">
-              <FaHandHolding className="mb-2" style={{ fontSize: "2rem", color: "#0d6efd" }} />
-              <FaInfoCircle className="mb-2" style={{ fontSize: "1rem", color: "#0d6efd" }} />
-              <button className="btn btn-primary mt-auto d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#addModal">
+              <FaHandHolding
+                className="mb-2"
+                style={{ fontSize: "2rem", color: "#0d6efd" }}
+              />
+              <FaInfoCircle
+                className="mb-2"
+                style={{ fontSize: "1rem", color: "#0d6efd" }}
+              />
+              <button
+                className="btn btn-primary mt-auto d-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#addModal"
+              >
                 <FaPlus className="me-2" style={{ fontSize: "1.1rem" }} />
                 Nuevo puesto
               </button>
@@ -192,12 +219,21 @@ const Listapuestos = () => {
 
         {/* Modal de agregar nuevo puesto */}
 
-        <div className="modal fade" id="addModal" tabIndex="-1" aria-hidden="true">
+        <div
+          className="modal fade"
+          id="addModal"
+          tabIndex="-1"
+          aria-hidden="true"
+        >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Agregar nuevo puesto</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
               </div>
               {/* Contenido de modal */}
               <div className="modal-body">
@@ -209,7 +245,9 @@ const Listapuestos = () => {
                       type="text"
                       className="form-control"
                       value={newJob.title}
-                      onChange={(e) => setNewJob({ ...newJob, title: e.target.value })}
+                      onChange={(e) =>
+                        setNewJob({ ...newJob, title: e.target.value })
+                      }
                       placeholder="Ej. Desarrollador Web"
                     />
                   </div>
@@ -217,13 +255,27 @@ const Listapuestos = () => {
                   <div className="mb-3">
                     <label className="form-label">Departamento</label>
                     <div className="dropdown">
-                      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      <button
+                        className="btn btn-secondary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                      >
                         {selectedDepartment}
                       </button>
                       <ul className="dropdown-menu">
-                        {["Soporte IT", "RRHH", "Contabilidad", "Mantenimiento", "Gerencia"].map((dept) => (
+                        {[
+                          "Soporte IT",
+                          "RRHH",
+                          "Contabilidad",
+                          "Mantenimiento",
+                          "Gerencia",
+                        ].map((dept) => (
                           <li key={dept}>
-                            <button className="dropdown-item" type="button" onClick={() => handleSelectDepartment(dept)}>
+                            <button
+                              className="dropdown-item"
+                              type="button"
+                              onClick={() => handleSelectDepartment(dept)}
+                            >
                               {dept}
                             </button>
                           </li>
@@ -237,20 +289,26 @@ const Listapuestos = () => {
 
               {/* Botones de cierre y guardar */}
               <div className="modal-footer">
-                <button type="button" className="btn btn-seconday" data-bs-dismiss="modal">
+                <button
+                  type="button"
+                  className="btn btn-seconday"
+                  data-bs-dismiss="modal"
+                >
                   Cancelar
                 </button>
-                <button type="button" className="btn btn-primary" onClick={handleAddJob}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleAddJob}
+                >
                   Agregar
                 </button>
               </div>
               {/* Final de botones de cierre y guardar */}
-
             </div>
           </div>
         </div>
         {/* Final de modal de agregar nuevo puesto */}
-
 
         {/* Buscador de puestos y filtrador por departamentos */}
         <div
@@ -261,16 +319,30 @@ const Listapuestos = () => {
             borderRadius: "10px",
           }}
         >
-
-
           <div className="dropdown">
-            <button style={{ width: "14rem" }} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button
+              style={{ width: "14rem" }}
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               {filterDepartment}
             </button>
             <ul className="dropdown-menu">
-              {["Soporte IT", "RRHH", "Contabilidad", "Mantenimiento", "Gerencia"].map((dept) => (
+              {[
+                "Soporte IT",
+                "RRHH",
+                "Contabilidad",
+                "Mantenimiento",
+                "Gerencia",
+              ].map((dept) => (
                 <li key={dept}>
-                  <button className="dropdown-item" type="button" onClick={() => handleFilterDepartment(dept)}>
+                  <button
+                    className="dropdown-item"
+                    type="button"
+                    onClick={() => handleFilterDepartment(dept)}
+                  >
                     {dept}
                   </button>
                 </li>
@@ -278,28 +350,57 @@ const Listapuestos = () => {
             </ul>
           </div>
 
-
-          <div class="input-group d-flex justify-content-around" style={{ width: "50%", marginLeft: "1%" }} >
-            <span class="input-group-text" id="basic-addon1"><CiSearch /></span>
-            <input style={{ opacity: "60%" }} type="text" class="form-control text-center" placeholder="Buscar por puestos" value={searchTerm} aria-label="Username" aria-describedby="basic-addon1" onChange={(e) => handleJobSearch(e)} />
+          <div
+            class="input-group d-flex justify-content-around"
+            style={{ width: "50%", marginLeft: "1%" }}
+          >
+            <span class="input-group-text" id="basic-addon1">
+              <CiSearch />
+            </span>
+            <input
+              style={{ opacity: "60%" }}
+              type="text"
+              class="form-control text-center"
+              placeholder="Buscar por puestos"
+              value={searchTerm}
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              onChange={(e) => handleJobSearch(e)}
+            />
           </div>
 
           <div>
-            <button className="btn btn-primary ms-2 " onClick={handleShowAllJobs}><BiShow style={{ marginTop: "-.2rem", marginRight: ".2rem" }} />Mostrar todos los puestos</button>
+            <button
+              className="btn btn-primary ms-2 "
+              onClick={handleShowAllJobs}
+            >
+              <BiShow style={{ marginTop: "-.2rem", marginRight: ".2rem" }} />
+              Mostrar todos los puestos
+            </button>
           </div>
         </div>
         {/* Fin de buscador de puestos y filtrador por departamentos */}
 
-
         {/* Tabla */}
         <div className="mt-4">
-          <table className="table table-striped border table-responsive text-center" style={{ tableLayout: 'fixed' }}>
+          <table
+            className="table table-striped border table-responsive text-center"
+            style={{ tableLayout: "fixed" }}
+          >
             <thead className="table-dark">
               <tr>
-                <th scope="col" style={{ width: '5%' }}>#</th>
-                <th scope="col" style={{ width: '25%' }}>Puesto</th>
-                <th scope="col" style={{ width: '25%' }}>Departamento</th>
-                <th scope="col" style={{ width: '25%' }}>Opciones</th>
+                <th scope="col" style={{ width: "5%" }}>
+                  #
+                </th>
+                <th scope="col" style={{ width: "25%" }}>
+                  Puesto
+                </th>
+                <th scope="col" style={{ width: "25%" }}>
+                  Departamento
+                </th>
+                <th scope="col" style={{ width: "25%" }}>
+                  Opciones
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -336,16 +437,24 @@ const Listapuestos = () => {
               ))}
             </tbody>
           </table>
-
         </div>
 
         {/* Modal de Edición */}
-        <div className="modal fade" id="editModal" tabIndex="-1" aria-hidden="true">
+        <div
+          className="modal fade"
+          id="editModal"
+          tabIndex="-1"
+          aria-hidden="true"
+        >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Editar Puesto</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
               </div>
               <div className="modal-body">
                 {selectedJob ? (
@@ -356,19 +465,38 @@ const Listapuestos = () => {
                         type="text"
                         className="form-control"
                         value={selectedJob.title}
-                        onChange={(e) => setSelectedJob({ ...selectedJob, title: e.target.value })}
+                        onChange={(e) =>
+                          setSelectedJob({
+                            ...selectedJob,
+                            title: e.target.value,
+                          })
+                        }
                       />
                     </div>
                     <div className="mb-3">
                       <label className="form-label">Departamento</label>
                       <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <button
+                          className="btn btn-secondary dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                        >
                           {selectedDepartment}
                         </button>
                         <ul className="dropdown-menu">
-                          {["Soporte IT", "RRHH", "Contabilidad", "Mantenimiento", "Gerencia"].map((dept) => (
+                          {[
+                            "Soporte IT",
+                            "RRHH",
+                            "Contabilidad",
+                            "Mantenimiento",
+                            "Gerencia",
+                          ].map((dept) => (
                             <li key={dept}>
-                              <button className="dropdown-item" type="button" onClick={() => handleSelectDepartment(dept)}>
+                              <button
+                                className="dropdown-item"
+                                type="button"
+                                onClick={() => handleSelectDepartment(dept)}
+                              >
                                 {dept}
                               </button>
                             </li>
@@ -376,17 +504,24 @@ const Listapuestos = () => {
                         </ul>
                       </div>
                     </div>
-
                   </form>
                 ) : (
                   <p>No job selected</p>
                 )}
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
                   Cerrar
                 </button>
-                <button type="button" className="btn btn-primary" onClick={handleSaveEditJob}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleSaveEditJob}
+                >
                   Guardar cambios
                 </button>
               </div>
@@ -398,25 +533,45 @@ const Listapuestos = () => {
         {/* Modal de Eliminación */}
 
         {/* Modal de Edición */}
-        <div className="modal fade" id="deleteModal" tabIndex="-1" aria-hidden="true">
+        <div
+          className="modal fade"
+          id="deleteModal"
+          tabIndex="-1"
+          aria-hidden="true"
+        >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Eliminar Puesto</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
               </div>
               <div className="modal-body">
                 {jobToDelete ? (
-                  <p>¿Desea eliminar <strong>{jobToDelete.title}</strong> de {jobToDelete.department}?</p>
+                  <p>
+                    ¿Desea eliminar <strong>{jobToDelete.title}</strong> de{" "}
+                    {jobToDelete.department}?
+                  </p>
                 ) : (
                   <p>No se ha seleccionado ningún puesto.</p>
                 )}
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
                   Cancelar
                 </button>
-                <button type="button" className="btn btn-danger" onClick={handleDeleteJob}>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={handleDeleteJob}
+                >
                   Eliminar
                 </button>
               </div>
@@ -429,7 +584,7 @@ const Listapuestos = () => {
         {notificationVisible && (
           <div
             className="alert alert-success position-fixed bottom-0 end-0 mb-3 me-3"
-            style={{ zIndex: 1050, cursor: 'pointer' }}
+            style={{ zIndex: 1050, cursor: "pointer" }}
             onClick={closeNotification}
           >
             {notification}
@@ -442,7 +597,6 @@ const Listapuestos = () => {
           </div>
         )}
         {/* Fin de alerta en la esquina inferior derecha */}
-
       </div>
     </Home>
   );
