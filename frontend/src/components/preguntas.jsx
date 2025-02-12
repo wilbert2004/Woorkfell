@@ -33,13 +33,23 @@ const preguntas = () => {
           <div>
 
             <div className="container">
-              <div className="row justify-content-center">
+              <div className="row ">
                 <div className="col-md-10 text-center">
                   <p className="text-muted">
                     Inidicaciones : En este módulo podrás agregar, editar y eliminar preguntas de tu encuesta. Además, tendrás la flexibilidad de personalizarla según tus necesidades.                  </p>
                 </div>
               </div>
+              <div className="col-md-2">
+
+                <button className="btn btn-primary mt-auto d-flex align-items-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addModal">Exportar a excel</button>
+
+              </div>
             </div>
+
+            {/* elemento para ver periodos disponibles  */}
+
 
 
             <div className="container border w-100 d-flex flex-column justify-content-evenly align-items-center " style={{ height: "150px", padding: "0px", paddingTop: "0px" }}>
@@ -74,10 +84,8 @@ const preguntas = () => {
               <div className="d-flex justify-content-between align-items-center bg-secondary text-white px-3 py-2 rounded">
                 <span className="fw-bold">Dimensiones o áreas</span>
                 <div className="d-flex align-items-center">
-                  <span className="me-2">Activo</span>
-                  <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" defaultChecked />
-                  </div>
+                  <input class="form-control justify-content-between" list="datalistOptions" id="exampleDataList" placeholder="Search" ></input>
+
                 </div>
               </div>
 
