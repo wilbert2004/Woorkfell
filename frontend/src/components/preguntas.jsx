@@ -58,12 +58,13 @@ const Preguntas = () => {
         {/* Botones de Exportar */}
         <div className="d-flex justify-content-end mb-3">
           <button className="btn btn-primary me-2">Exportar a Excel</button>
-
         </div>
 
         {/* Filtros y Buscador */}
-        <div className="container border w-70 d-flex flex-column justify-content-evenly align-items-center " style={{ height: "150px", padding: "0px", paddingTop: "0px" }}>
-
+        <div
+          className="container border w-70 d-flex flex-column justify-content-evenly align-items-center "
+          style={{ height: "150px", padding: "0px", paddingTop: "0px" }}
+        >
           <div className="w-100 bg-secondary text-white text-center py-2">
             <p className="h4 mb-0">Filtrar por grupo</p>
           </div>
@@ -79,18 +80,21 @@ const Preguntas = () => {
                 {filtro}
               </button>
               <ul className="dropdown-menu w-100">
-                {["Ver todos", "Trabajo en equipo", "Ambiente laboral", "Desarrollo personal"].map(
-                  (item) => (
-                    <li key={item}>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => setFiltro(item)}
-                      >
-                        {item}
-                      </button>
-                    </li>
-                  )
-                )}
+                {[
+                  "Ver todos",
+                  "Trabajo en equipo",
+                  "Ambiente laboral",
+                  "Desarrollo personal",
+                ].map((item) => (
+                  <li key={item}>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => setFiltro(item)}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -110,10 +114,11 @@ const Preguntas = () => {
               />
             </div>
           </div>
-          <table className="table table-striped border table-responsive text-center"
-            style={{ tableLayout: "fixed" }}>
+          <table
+            className="table table-striped border table-responsive text-center"
+            style={{ tableLayout: "fixed" }}
+          >
             <thead class="table-light">
-
               <tr className="table-dark">
                 <th scope="col" style={{ width: "5%" }}>
                   #
@@ -129,11 +134,8 @@ const Preguntas = () => {
                 </th>
                 <th scope="col" style={{ width: "25%" }}>
                   Opciones
-
                 </th>
               </tr>
-
-
             </thead>
             <tbody>
               {filteredData.map((item) => (
@@ -149,7 +151,6 @@ const Preguntas = () => {
                   </td>
                 </tr>
               ))}
-
             </tbody>
           </table>
         </div>
