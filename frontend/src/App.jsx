@@ -16,7 +16,7 @@ import Planaccion from "./components/planaccion";
 import InfoResultado from "./components/inforesultado";
 import Configuracion from "./components/configuracion";
 import InfoNivelSatis from "./components/infonivelsatis";
-
+import Formulario from "./components/Formulario";
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Triangulo from "./components/triangulo";
@@ -55,6 +55,8 @@ function App() {
         <Route path="/inforesultado" element={<InfoResultado />} />
         <Route path="/configuracion" element={<Configuracion />}></Route>
         <Route path="/infonivelsatis" element={<InfoNivelSatis />} />
+        {/* agregar la ruta de formulario */}
+        <Route path="/Formulario" element={<Formulario />} />
 
         {/* Agregar rutas para las otras secciones */}
       </Routes>

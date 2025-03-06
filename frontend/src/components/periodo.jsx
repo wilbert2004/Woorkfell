@@ -4,6 +4,7 @@ import { LuCalendarDays } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { MdEdit, MdDelete } from "react-icons/md";
+import { BsExclamationTriangle } from "react-icons/bs";
 
 const Periodo = () => {
   // Estado para manejar los periodos
@@ -45,7 +46,10 @@ const Periodo = () => {
   const periodosFiltrados = periodos.filter((p) =>
     p.nombre.toLowerCase().includes(busqueda.toLowerCase())
   );
-
+  const [periodoBorrar, setPeriodoBorrar] = useState(null);
+  const handleBorrarPeriodo = (id) => {
+    setPeriodos(periodos.filter((periodo) => periodo.id !== id));
+  };
   return (
     <Home>
       <div className="container text-center">
@@ -146,6 +150,7 @@ const Periodo = () => {
                         className="btn"
                         data-bs-toggle="modal"
                         data-bs-target="#deleteModal"
+                        onClick={() => setPeriodoBorrar(periodo.id)}
                       >
                         <MdDelete className="me-2" />
                         Eliminar
@@ -154,7 +159,7 @@ const Periodo = () => {
                         type="button"
                         className="btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#deleteModal"
+                        data-bs-target="#sharemodel"
                       >
                         <IoShareSocialOutline className="me-2" />
                         Compartir
@@ -182,57 +187,51 @@ const Periodo = () => {
                 style={{}}
               >
                 <h4 className="modal-title ">Editar Periodo</h4>
-
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                ></button>
               </div>
 
               {/* <!-- Modal body --> */}
               <div className="modal-body text-start h5 ">
                 <label htmlFor="editar" className="m-3 opacity-50">
-                  Editar Periodo
+                  Nombre del periodo
                 </label>
                 <br />
                 <input
                   type="text"
                   id="edita"
                   placeholder="Periodo 1"
-                  className="border rounded text-center w-75 h-100"
+                  className="border rounded text-center w-75 h-100 h6"
                 />
                 <div className="row">
-                  <div className="col m-3">
+                  <div className="col m-3 h6">
                     <label htmlFor="editar" className="opacity-50">
                       Fecha de inicio
                     </label>
                     <input
                       type="date"
                       id="editar"
-                      className="border rounded text-center w-100"
+                      className="border rounded text-center w-100 h6"
                     />
                   </div>
-                  <div className="col m-3">
+                  <div className="col m-3 h6">
                     <label htmlFor="editar" className="opacity-50">
                       Fecha de cierre
                     </label>
                     <input
                       type="date"
                       id="editar"
-                      className="border rounded text-center w-100"
+                      className="border rounded text-center w-100 h6"
                     />
                   </div>
-                  <label htmlFor="estado " className="opacity-50">
+                  <label htmlFor="estado " className="opacity-50 h6 m-1">
                     Estado:
                   </label>
                   <select
                     id="estado"
-                    className="border rounded text-center w-75 m-3 opacity-50"
+                    className="border rounded text-center w-75 m-3 opacity-50 h6"
                   >
                     <option
                       value="cerrado"
-                      className="border text-center opacity-50"
+                      className="border text-center opacity-50 h6"
                     >
                       Cerrado
                     </option>
@@ -267,7 +266,56 @@ const Periodo = () => {
           id="deleteModal"
           tabIndex="-1"
           aria-hidden="true"
-        ></div>
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              {/*!-- Modal Header --> */}
+              <div
+                className="modal-header bg-dark text-white opacity-50 "
+                style={{}}
+              >
+                <h4 className="modal-title ">Eliminar Periodo</h4>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              {/* modal body */}
+              <div className="modal-body text-start">
+                <div className="d-flex align-items-center h-100">
+                  <div className="flex-shrink-0 me-3">
+                    <BsExclamationTriangle size={24} className="text-warning" />
+                  </div>
+                  <div className="flex-grow-1">
+                    <p className="mb-0">
+                      Este periodo será eliminado permanentemente. ¿Está seguro
+                      que desea eliminarlo?
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* modal footer */}
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-bs-dismiss="modal"
+                  onClick={() => handleBorrarPeriodo(periodoBorrar)}
+                >
+                  Eliminar
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Home>
   );
