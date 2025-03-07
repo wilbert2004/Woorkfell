@@ -19,17 +19,19 @@ import { IoIosNotifications } from "react-icons/io";
 const Home = ({ children }) => {
   return (
     <div>
-      <div className="dropdown position-sticky top-0 w-100" 
-      style={{
-        backgroundColor: "white", // Fondo blanco sólido
-        zIndex: "10",
-      }}>
+      <div
+        className="dropdown position-sticky top-0 w-100"
+        style={{
+          backgroundColor: "white", // Fondo blanco sólido
+          zIndex: "10",
+        }}
+      >
         <nav
           className="navbar navbar-light bg-light"
           style={{
             borderBottom: "1px solid black", // Línea negra debajo del navbar
             padding: "0", // Eliminar margen y relleno
-             // Asegura que el navbar esté encima de otros elementos
+            // Asegura que el navbar esté encima de otros elementos
           }}
         >
           <div
