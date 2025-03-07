@@ -1,35 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   BsCalendar2WeekFill,
   BsCalendar2Date,
   BsReceipt,
-  BsQuestionDiamond,
-  BsBarChart,
   BsGear,
 } from "react-icons/bs";
-import { FaUsersGear, FaUsers } from "react-icons/fa";
-import { CiViewList } from "react-icons/ci";
-import { BiCog } from "react-icons/bi";
 import { FaRegUserCircle } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { IoIosNotifications } from "react-icons/io";
 
 const Home = ({ children }) => {
+  // Estado para controlar la visibilidad de los submódulos
+  const [isEncuestasOpen, setIsEncuestasOpen] = useState(true);
+  const [isResultadosOpen, setIsResultadosOpen] = useState(true);
+  const [isGeneralesOpen, setIsGeneralesOpen] = useState(true);
+
   return (
     <div>
-      <div className="dropdown position-sticky top-0 w-100" 
-      style={{
-        backgroundColor: "white", // Fondo blanco sólido
-        zIndex: "10",
-      }}>
+      <div
+        className="dropdown position-sticky top-0 w-100"
+        style={{
+          backgroundColor: "white", // Fondo blanco sólido
+          zIndex: "10",
+        }}
+      >
         <nav
           className="navbar navbar-light bg-light"
           style={{
             borderBottom: "1px solid black", // Línea negra debajo del navbar
             padding: "0", // Eliminar margen y relleno
-             // Asegura que el navbar esté encima de otros elementos
+            // Asegura que el navbar esté encima de otros elementos
           }}
         >
           <div
@@ -91,12 +93,18 @@ const Home = ({ children }) => {
               >
                 <li>
                   <button className="dropdown-item" type="button">
-                    Ajustes
+                    <Link to="/Ajustes">Ajustes</Link>
                   </button>
                 </li>
                 <li>
                   <button className="dropdown-item" type="button">
-                    Perfil
+                    <Link to="/Perfil">Perfil</Link>
+                  </button>
+                </li>
+                <li>
+                  <button className="dropdown-item " type="button ">
+                    {/* agregamos nuestros link de ruta paara consumo */}
+                    <Link to="/Consumo"> consumo</Link>
                   </button>
                 </li>
               </ul>
@@ -107,7 +115,6 @@ const Home = ({ children }) => {
 
       <div className="container-fluid ">
         <div className="row flex-nowrap">
-          {/* Sidebar */}
           <div
             className="col-auto col-md-3 col-xl-2 px-sm-5 px-0 position-fixed top-10 start-0"
             style={{
@@ -148,10 +155,7 @@ const Home = ({ children }) => {
                 <button
                   className="btn btn-dark text-white w-100 text-left"
                   type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#encuestasSubmenu"
-                  aria-expanded="false"
-                  aria-controls="encuestasSubmenu"
+                  onClick={() => setIsEncuestasOpen(!isEncuestasOpen)}
                   style={{
                     backgroundColor: "#343a40",
                     color: "white",
@@ -161,7 +165,7 @@ const Home = ({ children }) => {
                   <BsCalendar2Date style={{ marginRight: "10px" }} />
                   Encuestas
                 </button>
-                <ul className="collapse" id="encuestasSubmenu">
+                <ul className={`collapse ${isEncuestasOpen ? "show" : ""}`}>
                   <li>
                     <Link
                       to="/dimensiones"
@@ -197,10 +201,7 @@ const Home = ({ children }) => {
                 <button
                   className="btn btn-dark text-white w-100 text-left"
                   type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#resultadosSubmenu"
-                  aria-expanded="false"
-                  aria-controls="resultadosSubmenu"
+                  onClick={() => setIsResultadosOpen(!isResultadosOpen)}
                   style={{
                     backgroundColor: "#343a40",
                     color: "white",
@@ -210,7 +211,7 @@ const Home = ({ children }) => {
                   <BsReceipt style={{ marginRight: "10px" }} />
                   Resultados
                 </button>
-                <ul className="collapse" id="resultadosSubmenu">
+                <ul className={`collapse ${isResultadosOpen ? "show" : ""}`}>
                   <li>
                     <Link
                       to="/Resultados"
@@ -246,10 +247,7 @@ const Home = ({ children }) => {
                 <button
                   className="btn btn-dark text-white w-100 text-left"
                   type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#generalesSubmenu"
-                  aria-expanded="false"
-                  aria-controls="generalesSubmenu"
+                  onClick={() => setIsGeneralesOpen(!isGeneralesOpen)}
                   style={{
                     backgroundColor: "#343a40",
                     color: "white",
@@ -259,7 +257,7 @@ const Home = ({ children }) => {
                   <BsGear style={{ marginRight: "10px" }} />
                   Generales
                 </button>
-                <ul className="collapse" id="generalesSubmenu">
+                <ul className={`collapse ${isGeneralesOpen ? "show" : ""}`}>
                   <li>
                     <Link
                       to="/Listapuestos"

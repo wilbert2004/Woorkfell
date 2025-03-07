@@ -19,7 +19,9 @@ import InfoNivelSatis from "./components/infonivelsatis";
 import Formulario from "./components/Formulario";
 //importacion de react router dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Triangulo from "./components/triangulo";
+import Consumo from "./components/consumo";
+import Ajustes from "./components/ajustes";
+import Perfil from "./components/perfil";
 function App() {
   const [data, setData] = useState("");
 
@@ -41,22 +43,26 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />}></Route>
         <Route path="/periodo" element={<Periodo />}></Route>
-        <Route path="/dimensiones" element={<Dimensiones />}></Route>
-        <Route path="/preguntas" element={<Preguntas />}></Route>
-        <Route path="/escalas" element={<Escalas />}></Route>
-        <Route path="/resultados" element={<Resultados />}></Route>
-        <Route
-          path="/nivelsatisfaccion"
-          element={<Nivelsatisfaccion />}
-        ></Route>
-        <Route path="/comparacion" element={<Comparacion />}></Route>
-        <Route path="/listapuestos" element={<Listapuestos />}></Route>
-        <Route path="/planaccion" element={<Planaccion />}></Route>
-        <Route path="/inforesultado" element={<InfoResultado />} />
-        <Route path="/configuracion" element={<Configuracion />}></Route>
-        <Route path="/infonivelsatis" element={<InfoNivelSatis />} />
+        <Route path="dimensiones" element={<Dimensiones />}></Route>
+        <Route path="preguntas" element={<Preguntas />}></Route>
+        <Route path="escalas" element={<Escalas />}></Route>
+        <Route path="resultados" element={<Resultados />}></Route>
+        <Route path="nivelsatisfaccion" element={<Nivelsatisfaccion />}></Route>
+        <Route path="comparacion" element={<Comparacion />}></Route>
+        <Route path="listapuestos" element={<Listapuestos />}></Route>
+        <Route path="planaccion" element={<Planaccion />}></Route>
+        <Route path="inforesultado" element={<InfoResultado />} />
+        <Route path="configuracion" element={<Configuracion />}></Route>
+        <Route path="infonivelsatis" element={<InfoNivelSatis />} />
         {/* agregar la ruta de formulario */}
-        <Route path="/Formulario" element={<Formulario />} />
+        <Route path="Formulario" element={<Formulario />} />
+        {/* ruta de consumos */}
+        <Route path="Consumo" element={<Consumo />}></Route>
+
+        {/* Ruta para los ajustes */}
+        <Route path="Ajustes" element={<Ajustes />}></Route>
+        {/* Ruta para mi perfil  */}
+        <Route path="Perfil" element={<Perfil />}></Route>
 
         {/* Agregar rutas para las otras secciones */}
       </Routes>
