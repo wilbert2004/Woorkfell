@@ -4,17 +4,36 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
+const usuarios = [
+  { username: "admin", password: "admin123", role: "administrador" },
+  { username: "dev", password: "dev123", role: "desarrollador" },
+  { username: "buyer", password: "buyer123", role: "comprador" },
+];
+
 const Login = () => {
-  const [goHome, setGoHome] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Cambiar el estado
-    setGoHome(true);
+    const user = usuarios.find(
+      (u) => u.username === username && u.password === password
+    );
 
-    // Redirigir al usuario
-    navigate("/home");
+    if (user) {
+      // Redirigir al usuario según el rol
+      if (user.role === "administrador") {
+        navigate("/periodo");
+      } else if (user.role === "desarrollador") {
+        navigate("/periodo");
+      } else if (user.role === "comprador") {
+        navigate("/periodo");
+      }
+    } else {
+      setError("Credenciales incorrectas");
+    }
   };
 
   return (
@@ -47,6 +66,8 @@ const Login = () => {
                 id="username"
                 placeholder="Ingresa tu nombre"
                 className="form-control rounded-end-pill text-center fw-bold  dimension"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <br />
@@ -57,12 +78,17 @@ const Login = () => {
                 <RiLockPasswordFill />
               </span>
               <input
-                type="text"
-                id="username"
+                type="password"
+                id="password"
                 placeholder="password"
                 className="form-control rounded-end-pill text-center fw-bold dimension"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            <br />
+
+            {error && <div className="text-danger mb-3">{error}</div>}
 
             <div className="text-center mb-3">
               <button
@@ -81,7 +107,7 @@ const Login = () => {
                 style={{
                   borderRadius: "15px",
                 }}
-                onClick={handleSubmit}
+                type="submit"
               >
                 INICIAR SESION
               </button>
