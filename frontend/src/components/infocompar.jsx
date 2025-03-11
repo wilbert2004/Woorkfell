@@ -1,27 +1,27 @@
 import React from "react";
 import Home from "./home";
 import Cuadrado from "./cuadrado";
-
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from "recharts";
-
-const Infonivelsatis = () => {
+const Infocompar = () => {
   return (
     <Home>
       <div className="container">
+        <div className="m-2 border rounded ">
+          <p className="auto p-2 mb-3 bg-dark text-white opacity-50 text-center h5">
+            Grafica comparativa (periodo Enero-Febrero / Marzo -Mayo)
+          </p>
+          <div className="m-2   opacity-100"></div>
+        </div>
+
+        {/* tabla de intepretaciones */}
         <div className="border text-center m-3">
-          <h3 className="bg-dark text-white opacity-50">Interpretacion</h3>
+          <p className="auto p-2 mb-3 bg-dark text-white opacity-50 text-center h5">
+            Interpretacion
+          </p>
           <p className="opacity-50">
             los grados de satisfaccion se divide en tres partes (favorables
             ,indeciso y desaforable). los valores que les corresponde son
             configurados desde el modulo de configuraciones . Los valores
-            permitidos son los correpondientes a las escalas desde el modulo{" "}
+            permitidos son los correpondientes a las escalas desde el modulo
           </p>
 
           <div
@@ -120,4 +120,4 @@ const Infonivelsatis = () => {
   );
 };
 
-export default Infonivelsatis;
+export default Infocompar;
