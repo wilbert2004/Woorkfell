@@ -5,19 +5,39 @@ import { MdHelpOutline } from "react-icons/md";
 import { IoFileTrayFullSharp, IoEllipsisVertical } from "react-icons/io5";
 
 const Preguntas = () => {
+  const [preguntas, setPreguntas] = useState([
+    { id: 1, name: "Trabajo en equipo", ask: "¿Cómo calificarías el trabajo en equipo?", scale: "comentarios" },
+    { id: 2, name: "Ambiente laboral", ask: "¿Cómo calificarías el ambiente laboral?", scale: "comentarios" },
+    { id: 3, name: "Desarrollo personal", ask: "¿Cómo calificarías el desarrollo personal?", scale: "comentarios" },
+
+  ]);
+
+  const [editId, setEditId] = useState(null);
+  const [editValue, setEditValue] = useState("");
+  const [editName, setEditName] = useState("");
+  const [editAsk, setEditAsk] = useState("");
+  const [editScale, setEditScale] = useState("");
+  const handleEdit = (id, name, ask, scale) => {
+    setEditId(id);
+    setEditValue(name);
+    setEditAsk(ask);
+    setEditScale(scale);
+  };
+  const handleSave = (id) => {
+    setPreguntas(
+      preguntas.map((item) =>
+        item.id === id ? { ...item, name: editValue, ask: editAsk, scale: editScale } : item
+      )
+    );
+    setEditId(null);
+  };
+  // Filtrado por búsqueda o categoría
+
   const [search, setSearch] = useState("");
   const [filtro, setFiltro] = useState("Ver todos");
-
-  const data = [
-    { id: 1, name: "Trabajo en equipo" },
-    { id: 2, name: "Ambiente laboral" },
-    { id: 3, name: "Desarrollo personal" },
-  ];
-
-  // Filtrado por búsqueda o categoría
-  const filteredData = data.filter(
+  const filteredPreguntas = preguntas.filter(
     (item) =>
-      (filtro === "Ver todos" || item.name === filtro) &&
+      (filtro === "Ver todos" || item.name.toLowerCase().includes(filtro.toLowerCase())) &&
       item.name.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -58,13 +78,12 @@ const Preguntas = () => {
         {/* Botones de Exportar */}
         <div className="d-flex justify-content-end mb-3">
           <button className="btn btn-primary me-2">Exportar a Excel</button>
+
         </div>
 
         {/* Filtros y Buscador */}
-        <div
-          className="container border w-70 d-flex flex-column justify-content-evenly align-items-center "
-          style={{ height: "150px", padding: "0px", paddingTop: "0px" }}
-        >
+        <div className="container border w-70 d-flex flex-column justify-content-evenly align-items-center " style={{ height: "150px", padding: "0px", paddingTop: "0px" }}>
+
           <div className="w-100 bg-secondary text-white text-center py-2">
             <p className="h4 mb-0">Filtrar por grupo</p>
           </div>
@@ -80,21 +99,18 @@ const Preguntas = () => {
                 {filtro}
               </button>
               <ul className="dropdown-menu w-100">
-                {[
-                  "Ver todos",
-                  "Trabajo en equipo",
-                  "Ambiente laboral",
-                  "Desarrollo personal",
-                ].map((item) => (
-                  <li key={item}>
-                    <button
-                      className="dropdown-item"
-                      onClick={() => setFiltro(item)}
-                    >
-                      {item}
-                    </button>
-                  </li>
-                ))}
+                {["Ver todos", "Trabajo en equipo", "Ambiente laboral", "Desarrollo personal"].map(
+                  (item) => (
+                    <li key={item}>
+                      <button
+                        className="dropdown-item"
+                        onClick={() => setFiltro(item)}
+                      >
+                        {item}
+                      </button>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -114,11 +130,10 @@ const Preguntas = () => {
               />
             </div>
           </div>
-          <table
-            className="table table-striped border table-responsive text-center"
-            style={{ tableLayout: "fixed" }}
-          >
+          <table className="table table-striped border table-responsive text-center"
+            style={{ tableLayout: "fixed" }}>
             <thead class="table-light">
+
               <tr className="table-dark">
                 <th scope="col" style={{ width: "5%" }}>
                   #
@@ -134,20 +149,46 @@ const Preguntas = () => {
                 </th>
                 <th scope="col" style={{ width: "25%" }}>
                   Opciones
+
                 </th>
               </tr>
+
+
             </thead>
-            <tbody>
-              {filteredData.map((item) => (
+            <tbody >
+              {filteredPreguntas.map((item) => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
+                  <td>
+                    {editId === item.id ? (
+                      <input
+                        type="text"
+                        value={editValue}
+                        onChange={(e) => setEditValue(e.target.value)}
+                        className="form-control"
+                      />
+                    ) : (
+                      item.name
+                    )}
+                  </td>
+                  <td>{item.ask}</td>
+                  <td>{item.scale}</td>
                   <td className="text-center">
-                    <button className="btn btn-link text-success p-0">
-                      <IoEllipsisVertical size={20} />
-                    </button>
+                    {editId === item.id ? (
+                      <button
+                        className="btn btn-success btn-sm"
+                        onClick={() => handleSave(item.id)}
+                      >
+                        Guardar
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-link text-success p-0"
+                        onClick={() => handleEdit(item.id, item.name, item.ask, item.scale)}
+                      >
+                        <IoEllipsisVertical size={20} />
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -205,3 +246,4 @@ const Preguntas = () => {
 };
 
 export default Preguntas;
+
