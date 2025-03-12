@@ -68,12 +68,16 @@ const Dimensiones = () => {
             </nav>
           </div>
           <div>
-
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-md-10 text-center">
                   <p className="text-muted">
-                    Indicaciones: En este módulo podrás consultar los resultados de los periodos evaluados. En todo los casos, los resultados mostrados son promedios aritméticos. Podrás seleccionar el filtro de acuerdo a tus necesidades. Primero deberás seleccionar el periodo y después podrás seleccionar los criterios que deseas filtrar.
+                    Indicaciones: En este módulo podrás consultar los resultados
+                    de los periodos evaluados. En todo los casos, los resultados
+                    mostrados son promedios aritméticos. Podrás seleccionar el
+                    filtro de acuerdo a tus necesidades. Primero deberás
+                    seleccionar el periodo y después podrás seleccionar los
+                    criterios que deseas filtrar.
                   </p>
                 </div>
               </div>
@@ -111,29 +115,34 @@ const Dimensiones = () => {
                     )}
                   </ul>
                 </div>
+
               </div>
             </div>
 
 
             <div className="container border rounded p-3">
-
               <div className="d-flex justify-content-between align-items-center bg-secondary text-white px-3 py-2 rounded">
                 <span className="fw-bold">Dimensiones o áreas</span>
                 <div className="d-flex align-items-center">
                   <span className="me-2">Activo</span>
                   <div className="form-check form-switch">
-                    <input className="form-check-input" type="checkbox" defaultChecked />
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      defaultChecked
+                    />
                   </div>
                 </div>
               </div>
-
 
               <table className="table mt-3 mb-0">
                 <thead className="bg-secondary text-white">
                   <tr>
                     <th scope="col">Orden</th>
                     <th scope="col">Dimensiones o áreas</th>
-                    <th scope="col" className="text-center">Opciones</th>
+                    <th scope="col" className="text-center">
+                      Opciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -175,12 +184,10 @@ const Dimensiones = () => {
 
               </table>
             </div>
-
           </div>
         </div>
       </div>
-
-    </Home >
+    </Home>
   );
 };
 

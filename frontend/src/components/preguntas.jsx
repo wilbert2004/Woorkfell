@@ -246,3 +246,4 @@ const Preguntas = () => {
 };
 
 export default Preguntas;
+
