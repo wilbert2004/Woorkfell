@@ -3,6 +3,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Mostrar el sidebar con deslizamiento */
+.show-sidebar {
+  transform: translateX(0);
+}
+
+/* Ocultar el sidebar con deslizamiento */
+.hide-sidebar {
+  transform: translateX(-100%); /* Desliza el sidebar fuera de la vista */
+}
+
+/* Agregar transición suave */
+.show-sidebar, .hide-sidebar {
+  transition: transform 0.3s ease;  /* Transición suave */
+}
+
+.sidebar {
+  position: fixed; /* Fija el sidebar */
+  height: "100%"; /* Ocupa toda la altura de la pantalla */
+  width: 250px; /* Ajusta el ancho del sidebar */
+  z-index: 1; /* Asegura que el sidebar esté encima de otros elementos */
+  transition: transform 0.3s ease; /* Agrega transición suave si es necesario */
+}
 
 /* src/App.css o cualquier archivo CSS que estés usando */
 .alkatra-custom {
