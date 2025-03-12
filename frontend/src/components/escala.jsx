@@ -56,9 +56,7 @@ const Escala = () => {
                 aria-current="page"
                 style={{ marginTop: "2px" }}
               >
-                <Link to="/escala" className="link-secondary">
-                  Escala
-                </Link>
+                Escala
               </li>
             </ol>
           </nav>
