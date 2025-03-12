@@ -25,12 +25,12 @@ const Navtop = ({ toggleSidebar }) => {
   return (
     <nav className="navbar border border-secondary navbar-dark text-bg-light position-sticky top-0 w-100">
       <div className="d-flex justify-content-between align-items-center w-100 pe-4">
-        <div className="w-25">
+        <div className="w-75">
           <button className="btn btn-lg btn-light ms-2" onClick={toggleSidebar}>
             <GiHamburgerMenu />
           </button>
           <Link to="/periodo">
-            <img className="img-fluid" style={{ width: "60%" }} src="/workfeel-logo.png" alt="Workfeel Logo" />
+            <img className="img-fluid" style={{ width: "200px" }} src="/workfeel-logo.png" alt="Workfeel Logo" />
           </Link>
         </div>
 
@@ -67,9 +67,6 @@ const Navtop = ({ toggleSidebar }) => {
             >
               <FaRegUserCircle style={{ fontSize: "28px" }} />
             </button>
-            <span className="ms-2" style={{ fontSize: "16px" }}>
-                Crhistopher Gutierrez
-              </span>{" "}
             <ul
               className="dropdown-menu dropdown-menu-end"
               aria-labelledby="dropdownMenu2"
@@ -91,6 +88,9 @@ const Navtop = ({ toggleSidebar }) => {
               </li>
             </ul>
           </div>
+          <span className="ms-2" style={{ fontSize: "16px" }}>
+                Crhistopher Gutierrez
+              </span>{" "}
         </div>
       </div>
     </nav>
