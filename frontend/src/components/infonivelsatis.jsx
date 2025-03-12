@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./home";
 import Cuadrado from "./cuadrado";
-
+import Tableinterpretacion from "./tableinterpretacion";
 import {
   LineChart,
   Line,
@@ -114,6 +114,9 @@ const Infonivelsatis = () => {
             </div>
           </div>
           {/* termina la tabla de intepretacion */}
+        <div>
+          {/* llamamos los otros componentes de tabla de intepretacion */}
+          <Tableinterpretacion />
         </div>
       </div>
     </Home>

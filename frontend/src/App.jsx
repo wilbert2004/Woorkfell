@@ -23,6 +23,7 @@ import Consumo from "./components/consumo";
 import Ajustes from "./components/ajustes";
 import Perfil from "./components/perfil";
 import Infocompar from "./components/infocompar";
+import Tableinterpretacion from "./components/tableinterpretacion";
 function App() {
   const [data, setData] = useState("");
 
@@ -67,6 +68,8 @@ function App() {
 
         {/* agregamos las rutas de infocompar */}
         <Route path="infocompar" element={<Infocompar />} />
+        {/* Agregar rutas para tabla de interpretaciones */}
+        <Route path="tableinterpretacion" element={<Tableinterpretacion />} />
       </Routes>
     </Router>
   );

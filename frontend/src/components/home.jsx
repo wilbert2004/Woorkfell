@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   BsCalendar2WeekFill,
   BsCalendar2Date,
@@ -16,6 +16,9 @@ const Home = ({ children }) => {
   const [isEncuestasOpen, setIsEncuestasOpen] = useState(true);
   const [isResultadosOpen, setIsResultadosOpen] = useState(true);
   const [isGeneralesOpen, setIsGeneralesOpen] = useState(true);
+
+  const location = useLocation();
+  const username = location.state?.username || "Usuario";
 
   return (
     <div>
@@ -51,7 +54,7 @@ const Home = ({ children }) => {
                 marginLeft: "20%", // Ajuste para acercarlo al centro
               }}
             >
-              Bienvenido Wilbert Chan
+              Bienvenido {username}
             </h3>
 
             {/* Ícono de notificación solo visible */}
@@ -83,7 +86,7 @@ const Home = ({ children }) => {
                 <FaRegUserCircle style={{ fontSize: "28px" }} />
               </button>
               <span className="ms-2" style={{ fontSize: "16px" }}>
-                Wilbert Chan
+                {username}
               </span>{" "}
               {/* Nombre al lado del perfil */}
               {/* Menú desplegable */}
