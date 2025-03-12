@@ -30,7 +30,7 @@ const Navtop = ({ toggleSidebar }) => {
             <GiHamburgerMenu />
           </button>
           <Link to="/periodo">
-            <img className="img-fluid" style={{ width: "200px" }} src="/workfeel-logo.png" alt="Workfeel Logo" />
+            <img className="img-fluid" style={{ width: "250px" }} src="/workfeel-logo.png" alt="Workfeel Logo" />
           </Link>
         </div>
 
