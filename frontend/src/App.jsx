@@ -22,6 +22,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Consumo from "./components/consumo";
 import Ajustes from "./components/ajustes";
 import Perfil from "./components/perfil";
+import Infocompar from "./components/infocompar";
 import Tableinterpretacion from "./components/tableinterpretacion";
 function App() {
   const [data, setData] = useState("");
@@ -65,6 +66,8 @@ function App() {
         {/* Ruta para mi perfil  */}
         <Route path="Perfil" element={<Perfil />}></Route>
 
+        {/* agregamos las rutas de infocompar */}
+        <Route path="infocompar" element={<Infocompar />} />
         {/* Agregar rutas para tabla de interpretaciones */}
         <Route path="tableinterpretacion" element={<Tableinterpretacion />} />
       </Routes>
