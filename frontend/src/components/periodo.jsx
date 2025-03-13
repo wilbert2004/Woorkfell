@@ -111,7 +111,7 @@ const Periodo = () => {
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 <Link to="/Periodo" className="link-secondary">
-                  Resultados
+                  Periodo
                 </Link>
               </li>
             </ol>
