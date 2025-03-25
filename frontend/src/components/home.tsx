@@ -10,12 +10,10 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ children }) => {
-  const [isEncuestasOpen, setIsEncuestasOpen] = useState(true);
-  const [isResultadosOpen, setIsResultadosOpen] = useState(true);
-  const [isGeneralesOpen, setIsGeneralesOpen] = useState(true);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const toggleSidebar = () => {
+    console.log("Sidebar toggled");
     setIsSidebarVisible(!isSidebarVisible);
   };
 
@@ -27,6 +25,7 @@ const Home: React.FC<HomeProps> = ({ children }) => {
 
       <div className="container-fluid">
         <div className="row">
+          <Sidebar isVisible={isSidebarVisible} />
 
           <div
             className="col p-4 d-flex justify-content-center"
