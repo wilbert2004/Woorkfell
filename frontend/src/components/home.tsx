@@ -11,6 +11,9 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ children }) => {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [isEncuestasOpen, setIsEncuestasOpen] = useState(true);
+  const [isResultadosOpen, setIsResultadosOpen] = useState(true);
+  const [isGeneralesOpen, setIsGeneralesOpen] = useState(true);
 
   const toggleSidebar = () => {
     console.log("Sidebar toggled");
@@ -19,14 +22,26 @@ const Home: React.FC<HomeProps> = ({ children }) => {
 
   return (
     <div>
+      {/* Barra superior */}
       <div className="position-sticky top-0 w-100" style={{ zIndex: "10" }}>
         <Navtop toggleSidebar={toggleSidebar} />
       </div>
 
+      {/* Contenedor principal */}
       <div className="container-fluid">
         <div className="row">
-          <Sidebar isVisible={isSidebarVisible} />
+          {/* Sidebar */}
+          <Sidebar
+            isVisible={isSidebarVisible}
+            isEncuestasOpen={isEncuestasOpen}
+            setIsEncuestasOpen={setIsEncuestasOpen}
+            isResultadosOpen={isResultadosOpen}
+            setIsResultadosOpen={setIsResultadosOpen}
+            isGeneralesOpen={isGeneralesOpen}
+            setIsGeneralesOpen={setIsGeneralesOpen}
+          />
 
+          {/* Contenido principal */}
           <div
             className="col p-4 d-flex justify-content-center"
             style={{ marginLeft: isSidebarVisible ? "250px" : "0px" }}
