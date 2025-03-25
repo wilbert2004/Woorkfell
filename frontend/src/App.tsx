@@ -24,20 +24,6 @@ import Ajustes from "./components/ajustes";
 import Perfil from "./components/perfil";
 import Infocompar from "./components/infocompar";
 function App() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000")
-      .then((response) => {
-        setData(response.data);
-        console.log("base de datos corriendo " + response.data);
-      })
-      .catch((error) => {
-        console.error("Hubo un error:", error);
-      });
-  }, []);
-
   return (
     <Router>
       <Routes>

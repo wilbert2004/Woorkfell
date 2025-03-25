@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { CiSearch } from "react-icons/ci";
 
-const InfoResultado = () => {
+const InfoResultado:React.FC = () => {
   return (
     <Home>
       <div className="container">
@@ -39,7 +39,7 @@ const InfoResultado = () => {
             <div className="col-sm ">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="green" width="30px" height="30px" />
+                  <Cuadrado color="green" width="30px" height="30px" letra="A" />
                 </div>
                 <div className="p-2">Opinion favorables (4 a 5)</div>
               </div>
@@ -47,7 +47,7 @@ const InfoResultado = () => {
             <div className="col-sm">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="green" width="30px" height="30px" />{" "}
+                  <Cuadrado color="green" width="30px" height="30px" letra="A" />{" "}
                   {/* Cuadrado verde */}
                 </div>
                 <div className="p-2">Opinion favorables (4 a 5)</div>
@@ -64,7 +64,7 @@ const InfoResultado = () => {
             <div className="col-sm">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="yellow" width="30px" height="30px" />{" "}
+                  <Cuadrado color="yellow" width="30px" height="30px" letra="A" />{" "}
                   {/* Cuadrado amarillo */}
                 </div>
                 <div className="p-2">Opinion indecisa (2 a 3.9)</div>
@@ -73,7 +73,7 @@ const InfoResultado = () => {
             <div className="col-sm">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="yellow" width="30px" height="30px" />{" "}
+                  <Cuadrado color="yellow" width="30px" height="30px" letra="A" />{" "}
                   {/* Cuadrado amarillo */}
                 </div>
                 <div className="p-2">Opinion indecisa (2 a 3.9)</div>
@@ -90,7 +90,7 @@ const InfoResultado = () => {
             <div className="col-sm">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="red" width="30px" height="30px" />{" "}
+                  <Cuadrado color="red" width="30px" height="30px" letra="A"/>{" "}
                   {/* Cuadrado rosa */}
                 </div>
                 <div className="p-2">Opinion Desafavorables (1 a 1.9)</div>
@@ -100,7 +100,7 @@ const InfoResultado = () => {
             <div className="col-sm">
               <div className="d-flex flex-row">
                 <div className="p-2">
-                  <Cuadrado color="red" width="30px" height="30px" />{" "}
+                  <Cuadrado color="red" width="30px" height="30px" letra="A" />{" "}
                   {/* Cuadrado rosa */}
                 </div>
                 <div className="p-2">Opinion Desafavorables (1 a 1.9)</div>

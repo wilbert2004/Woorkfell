@@ -5,41 +5,6 @@ import { CiUser } from "react-icons/ci";
 import { IoFileTrayFullSharp } from "react-icons/io5";
 import { IoEllipsisVertical } from "react-icons/io5";
 const Dimensiones = () => {
-  {/*Esto guarda, rastrea y cambia los valores de las dimensiones
-  y el nombre de la dimensión que se está editando.
-    */}
-
-
-  const [dimensiones, setDimensiones] = useState([
-    { id: 1, name: "Trabajo en equipo" },
-    { id: 2, name: "Ambiente laboral" },
-    { id: 3, name: "Desarrollo personal" },
-  ]);
-
-  const [editId, setEditId] = useState(null);
-  const [editValue, setEditValue] = useState("");
-  const [editName, setEditName] = useState("");
-  const handleEdit = (id, name) => {
-    setEditId(id);
-    setEditValue(name);
-  };
-  const handleSave = (id) => {
-    setDimensiones(
-      dimensiones.map((item) =>
-        item.id === id ? { ...item, name: editValue } : item
-      )
-    );
-    setEditId(null);
-  };
-  // Filtrado por búsqueda o categoría
-
-  const [search, setSearch] = useState("");
-  const [filtro, setFiltro] = useState("Ver todos");
-  const filteredDimensiones = dimensiones.filter(
-    (item) =>
-      (filtro === "Ver todos" || item.name === filtro) &&
-      item.name.toLowerCase().includes(search.toLowerCase())
-  );
 
 
   return (
@@ -98,7 +63,7 @@ const Dimensiones = () => {
                     data-bs-toggle="dropdown"
                   >
                     <IoFileTrayFullSharp className="me-2" />
-                    {filtro}
+                    
                   </button>
                   <ul className="dropdown-menu w-100">
                     {["Ver todos", "Trabajo en equipo", "Ambiente laboral", "Desarrollo personal"].map(
@@ -106,7 +71,7 @@ const Dimensiones = () => {
                         <li key={item}>
                           <button
                             className="dropdown-item"
-                            onClick={() => setFiltro(item)}
+                           
                           >
                             {item}
                           </button>
@@ -146,40 +111,6 @@ const Dimensiones = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredDimensiones.map((item) => (
-                    <tr key={item.id}>
-                      <td>{item.id}</td>
-                      <td>
-                        {editId === item.id ? (
-                          <input
-                            type="text"
-                            value={editValue}
-                            onChange={(e) => setEditValue(e.target.value)}
-                            className="form-control"
-                          />
-                        ) : (
-                          item.name
-                        )}
-                      </td>
-                      <td className="text-center">
-                        {editId === item.id ? (
-                          <button
-                            className="btn btn-success btn-sm"
-                            onClick={() => handleSave(item.id)}
-                          >
-                            Guardar
-                          </button>
-                        ) : (
-                          <button
-                            className="btn btn-link text-success p-0"
-                            onClick={() => handleEdit(item.id, item.name)}
-                          >
-                            <IoEllipsisVertical size={20} />
-                          </button>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
                 </tbody>
 
               </table>
