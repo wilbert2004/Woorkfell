@@ -3,18 +3,18 @@ import { FaCalendarAlt, FaPoll, FaChartBar, FaCogs, FaChevronDown, FaChevronRigh
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ isVisible }) => {
-  const [openSections, setOpenSections] = useState({
-    Encuestas: true,
-    Resultados: true,
-    Generales: true,
-  });
+const Sidebar = ({ isVisible, isEncuestasOpen, setIsEncuestasOpen, isResultadosOpen, setIsResultadosOpen, isGeneralesOpen, setIsGeneralesOpen }) => {
 
   const toggleSection = (section) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
+    if(section==="Encuestas"){
+      setIsEncuestasOpen((prev) => !prev)
+    }
+    else if (section==="Resultados") {
+      setIsResultadosOpen((prev) => !prev)
+    }
+    else if (section==="Generales"){
+      setIsGeneralesOpen((prev) => !prev)
+    }
   };
 
   return (
@@ -38,9 +38,9 @@ const Sidebar = ({ isVisible }) => {
         <button className="btn btn-dark w-100 text-start d-flex align-items-center" onClick={() => toggleSection("Encuestas")}>
           <FaPoll className="me-2" />
           Encuestas
-          {openSections.Encuestas ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
+          {isEncuestasOpen ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
         </button>
-        {openSections.Encuestas && (
+        {isEncuestasOpen && (
           <div className="ms-4 mt-2">
             <Link to="/dimensiones" className="text-white text-decoration-none"><p className="mb-3">• Dimensiones</p></Link>
             <Link to="/preguntas" className="text-white text-decoration-none"><p className="mb-3">• Preguntas</p></Link>
@@ -54,9 +54,9 @@ const Sidebar = ({ isVisible }) => {
         <button className="btn btn-dark w-100 text-start d-flex align-items-center" onClick={() => toggleSection("Resultados")}>
           <FaChartBar className="me-2" />
           Resultados
-          {openSections.Resultados ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
+          { isResultadosOpen ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
         </button>
-        {openSections.Resultados && (
+        { isResultadosOpen && (
           <div className="ms-4 mt-2">
             <Link to="/Resultados" className="text-white text-decoration-none"><p className="mb-3">• Resultado</p></Link>
             <Link to="/Nivelsatisfaccion" className="text-white text-decoration-none"><p className="mb-3">• Niveles de satisfacción</p></Link>
@@ -70,9 +70,9 @@ const Sidebar = ({ isVisible }) => {
         <button className="btn btn-dark w-100 text-start d-flex align-items-center" onClick={() => toggleSection("Generales")}>
           <FaCogs className="me-2" />
           Generales
-          {openSections.Generales ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
+          {isGeneralesOpen ? <FaChevronDown className="ms-auto" /> : <FaChevronRight className="ms-auto" />}
         </button>
-        {openSections.Generales && (
+        {isGeneralesOpen && (
           <div className="ms-4 mt-2">
             <Link to="/Listapuestos" className="text-white text-decoration-none"><p className="mb-3">• Lista de puestos</p></Link>
             <Link to="/Planaccion" className="text-white text-decoration-none"><p className="mb-3">• Plan de acción</p></Link>
