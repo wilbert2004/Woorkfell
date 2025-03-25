@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Asegúrate de importar Bootstrap
 import { FaRegUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [goHome, setGoHome] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Cambiar el estado
-    setGoHome(true);
 
-    // Redirigir al usuario
+    // Aquí puedes agregar lógica para validar el usuario y la contraseña
+    console.log("Formulario enviado");
+
+    // Redirigir al usuario al home
     navigate("/home");
   };
 
@@ -25,7 +25,7 @@ const Login = () => {
           {/* Título principal */}
           <h3 className="alkatra-custom fw-bold mb-1 letra">Bienvenido a</h3>
           <h1
-            className="amaranth-bold text-black-50 fw-bold mb-4  letra1"
+            className="amaranth-bold text-black-50 fw-bold mb-4 letra1"
             style={{
               letterSpacing: "15px",
             }}
@@ -36,7 +36,7 @@ const Login = () => {
 
           {/* Formulario */}
           <form onSubmit={handleSubmit}>
-            <h4 className="fw-semibold mb- 1">Username</h4>
+            <h4 className="fw-semibold mb-1">Username</h4>
             <div className="input-group w-75 mx-auto mb-3">
               {/* Ícono dentro del input */}
               <span className="input-group-text bg-light rounded-start-pill">
@@ -46,7 +46,8 @@ const Login = () => {
                 type="text"
                 id="username"
                 placeholder="Ingresa tu nombre"
-                className="form-control rounded-end-pill text-center fw-bold  dimension"
+                className="form-control rounded-end-pill text-center fw-bold dimension"
+                required
               />
             </div>
             <br />
@@ -57,15 +58,17 @@ const Login = () => {
                 <RiLockPasswordFill />
               </span>
               <input
-                type="text"
-                id="username"
-                placeholder="password"
+                type="password" // Cambiado a "password" para ocultar el texto
+                id="password" // Cambiado el ID para evitar duplicados
+                placeholder="Ingresa tu contraseña"
                 className="form-control rounded-end-pill text-center fw-bold dimension"
+                required
               />
             </div>
 
             <div className="text-center mb-3">
               <button
+                type="button"
                 className="btn btn-link text-danger"
                 style={{
                   textDecoration: "none", // Elimina el subrayado
@@ -77,13 +80,13 @@ const Login = () => {
 
             <div>
               <button
-                className="btn btn-primary mb-1 w-20 p-3 "
+                type="submit" // Cambiado a "submit" para que funcione con el formulario
+                className="btn btn-primary mb-1 w-20 p-3"
                 style={{
                   borderRadius: "15px",
                 }}
-                onClick={handleSubmit}
               >
-                INICIAR SESION
+                INICIAR SESIÓN
               </button>
             </div>
           </form>
