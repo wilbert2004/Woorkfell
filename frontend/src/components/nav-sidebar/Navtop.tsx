@@ -85,6 +85,18 @@ const Navtop: React.FC<NavtopProps> = ({ toggleSidebar }) => {
                   Consumo
                 </Link>
               </li>
+              <li>
+                <Link to="/logout" className="dropdown-item">
+                  Cerrar Sesión
+                </Link>
+              </li>
+              <li>
+                {/* este solo tendra acceso el admin  */}
+                
+                <Link to="/Panel_Administrativo" className="dropdown-item">
+                  Panel Administrativo
+                </Link>
+              </li>
             </ul>
           </div>
           <span className="ms-2" style={{ fontSize: "16px" }}>
