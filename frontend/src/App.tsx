@@ -23,6 +23,7 @@ import Consumo from "./components/consumo";
 import Ajustes from "./components/ajustes";
 import Perfil from "./components/perfil";
 import Infocompar from "./components/infocompar";
+import Panel_Administrativo from "./components/panel_administrativo";
 function App() {
   return (
     <Router>
@@ -54,6 +55,8 @@ function App() {
         {/* Agregar rutas para las otras secciones */}
         {/* agregamos las rutas de infocompar */}
         <Route path="infocompar" element={<Infocompar />} />
+        {/* Ruta para panel administrativo */}
+        <Route path="panel_administrativo" element={<Panel_Administrativo />} />
       </Routes>
     </Router>
   );
