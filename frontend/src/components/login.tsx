@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = () => {
 
     // Aquí puedes agregar lógica para validar el usuario y la contraseña
     console.log("Formulario enviado");
@@ -35,7 +34,7 @@ const Login = () => {
           <br />
 
           {/* Formulario */}
-          <form onSubmit={handleSubmit}>
+          <form>
             <h4 className="fw-semibold mb-1">Username</h4>
             <div className="input-group w-75 mx-auto mb-3">
               {/* Ícono dentro del input */}
@@ -80,7 +79,8 @@ const Login = () => {
 
             <div>
               <button
-                type="submit" // Cambiado a "submit" para que funcione con el formulario
+                // Cambiado a "submit" para que funcione con el formulario
+                onClick={handleSubmit}
                 className="btn btn-primary mb-1 w-20 p-3"
                 style={{
                   borderRadius: "15px",

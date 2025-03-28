@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosNotifications } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,7 +9,9 @@ interface NavtopProps {
 }
 
 const Navtop: React.FC<NavtopProps> = ({ toggleSidebar }) => {
- 
+
+  const [auth] = useState("Administrativo")
+
   return (
     <nav className="navbar border border-secondary navbar-dark text-bg-light position-sticky top-0 w-100">
       <div className="d-flex justify-content-between align-items-center w-100 pe-4">
@@ -90,13 +92,15 @@ const Navtop: React.FC<NavtopProps> = ({ toggleSidebar }) => {
                   Cerrar Sesión
                 </Link>
               </li>
-              <li>
-                {/* este solo tendra acceso el admin  */}
-                
-                <Link to="/Panel_Administrativo" className="dropdown-item">
-                  Panel Administrativo
-                </Link>
-              </li>
+              {auth === "Administrativo" &&
+                <li>
+                  {/* este solo tendra acceso el admin  */}
+
+                  <Link to="/Panel_Administrativo" className="dropdown-item">
+                    Panel Administrativo
+                  </Link>
+                </li>
+              }
             </ul>
           </div>
           <span className="ms-2" style={{ fontSize: "16px" }}>
