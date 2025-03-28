@@ -48,6 +48,7 @@ const Panel_Administrativo = () => {
                   <div className="modal-body">
                     {/* Formulario para agregar usuario */}
                     <form>
+                      {/* nombre del usuario */}
                       <div className="mb-3">
                         <label htmlFor="nombreUsuario" className="form-label">
                           Nombre del Usuario
@@ -60,6 +61,20 @@ const Panel_Administrativo = () => {
                           required
                         />
                       </div>
+                      {/* password del usuario */}
+                      <div>
+                        <label htmlFor="passwordUsuario" className="form-label">
+                          Contraseña
+                        </label>
+                        <input
+                          type="password"
+                          className="form-control"
+                          id="passwordUsuario"
+                          placeholder="Ingresa la contraseña"
+                          required
+                        />
+                      </div>
+
                       <div className="mb-3">
                         <label htmlFor="emailUsuario" className="form-label">
                           Correo Electrónico
@@ -161,16 +176,25 @@ const Panel_Administrativo = () => {
                         />
                       </div>
                       <div className="mb-3">
-                        <label htmlFor="telefonoCompania" className="form-label">
-                          Teléfono
+                        <label htmlFor="correocompany" className="form-label">
+                          Correo Electronico
                         </label>
-                        <input
-                          type="tel"
+                        <input type="email"
                           className="form-control"
-                          id="telefonoCompania"
-                          placeholder="Ingresa el teléfono"
+                          id="correocompany"
+                          placeholder="ingresa su correo elctronico"
                           required
                         />
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="creditocompany" className="form-label">
+                          Ingresa el total de credito
+                        </label>
+                        <input type="number"
+                          className="form-control"
+                          placeholder="ingresa el total de tus creditos"
+                          id="creditoscompany"
+                          required />
                       </div>
                     </form>
                   </div>
