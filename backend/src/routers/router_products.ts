@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createProduct } from './handlers/product'
+import { createProduct } from '../handlers/product'
 
 const router = Router()
 
@@ -21,5 +21,7 @@ router.patch('/', (req, res) => {
 router.delete('/', (req, res) => {
     res.json('desde delete')
 })
+
+
 
 export default router

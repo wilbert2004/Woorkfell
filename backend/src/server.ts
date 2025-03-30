@@ -1,7 +1,11 @@
 import express  from "express";
 import colors from 'colors'
-import router from "./router";
+import router_products from "./routers/router_products";
+import router_users from "./routers/router_users";
+import router_roles from "./routers/router_rol";
+import router_company from "./routers/router_company";
 import db from "./config/db";
+import router_department from "./routers/router_department";
 
 
 // Conectar a base de datos
@@ -30,7 +34,11 @@ server.use(express.json())
 
 
 // Mandar router
-server.use('/api/products', router)
+server.use('/api/products', router_products)
+server.use('/api/users', router_users)
+server.use('/api/roles', router_roles)
+server.use('/api/company', router_company)
+server.use('/api/department', router_department)
 
 
 export default server
